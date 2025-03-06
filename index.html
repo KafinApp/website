@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kafin</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+      :root {
+        /* Customer Colors */
+        --customer-primary: #472e1d;
+        --customer-secondary: #ffa500;
+        --customer-gradient-from: #130800;
+        --customer-gradient-to: #472e1d;
+
+        /* Cafe Owner Colors */
+        --cafeowner-primary: #0d3c0f;
+        --cafeowner-secondary: #9fb49f;
+        --cafeowner-gradient-from: #020c03;
+        --cafeowner-gradient-to: #0a370d;
+
+        /* Element Colors */
+        --element-primary: #f5f0dc;
+        --element-selected: #fff1c0;
+        --element-horizontal-gradient-from: #f5f0dc;
+        --element-horizontal-gradient-to: #f9e6a1;
+        --element-vertical-gradient-from: #f9e6a1;
+        --element-vertical-gradient-to: #fff1c0;
+
+        /* Other Colors */
+        --light-brown: #888279;
+        --button-gradient-from: #402512;
+        --button-gradient-to: #6c4629;
+        --background: #fcfcfc;
+
+        /* Error Colors */
+        --error-red: #be0000;
+        --error-background: #eebebe;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Raleway", sans-serif;
+      }
+
+      .temp {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          to top,
+          var(--cafeowner-gradient-from),
+          var(--cafeowner-gradient-to)
+        );
+      }
+
+      .message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .message * {
+        color: var(--element-primary);
+        text-align: center;
+      }
+
+      .message h1 {
+        font-family: "Lora", sans-serif;
+        font-weight: 400;
+        font-size: 64px;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="temp">
+      <div class="message">
+        <h1>Kafin</h1>
+        <p>Çok yakında.</p>
+      </div>
+    </section>
+  </body>
+</html>
