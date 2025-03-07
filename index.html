@@ -60,22 +60,12 @@
       }
 
       .temp .background-image {
-        width: 800px;
-        height: 800px;
-        position: absolute;
-        top: 0;
+        width: unset;
+        height: 100dvh;
+        aspect-ratio: 1;
+        top: -40px;
         z-index: 1;
-        opacity: 0.2;
-        filter: blur(2px);
-      }
-
-      @media screen and (max-width: 1068px) {
-        .temp .background-image {
-          width: unset;
-          height: 100dvh;
-          aspect-ratio: 1;
-          top: -40px;
-        }
+        filter: blur(2px) opacity(0.25);
       }
 
       .temp .message {
