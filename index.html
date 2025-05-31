@@ -93,6 +93,25 @@
         font-size: 72px;
       }
 
+      .temp .message p {
+        text-align: right;
+        margin-top: -1.5rem;
+      }
+
+      .temp .message .logo-image {
+        width: 350px;
+      }
+
+      @media screen and (max-width: 734px) {
+        .temp .message .logo-image {
+          width: 220px;
+        }
+        .temp .message p {
+          font-size: 12px;
+          margin-top: -1rem;
+        }
+      }
+
       .temp .author {
         position: absolute;
         bottom: 1rem;
@@ -112,7 +131,11 @@
       />
       <div class="message">
         <div>
-          <h1>Kafin</h1>
+          <img
+            class="logo-image"
+            src="./assets/logo_text.png"
+            alt="Kahve çekirdekleri."
+          />
           <p>Çok yakında</p>
         </div>
       </div>
