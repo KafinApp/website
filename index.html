@@ -1,175 +1,599 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="theme-color" content="#0a370d" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/favicon-16.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/favicon-32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="48x48"
-      href="/assets/favicon-48.png"
-    />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="/assets/logo-192.png"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/logo-192.png" />
     <meta name="msapplication-navbutton-color" content="#020c03" />
     <meta name="apple-mobile-web-app-status-bar-style" content="#0a370d" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kafin</title>
+
+    <!-- SEO Meta Tags -->
+    <title>Kafin - Kahve Kampanyaları Dijitalleşti</title>
+    <meta name="description" content="Kafin ile kafenizdeki kampanyaları dijitalleştirin. QR kod ile kahve sayısı takibi, otomatik kupon sistemi ve detaylı analizler." />
+    <meta name="keywords" content="kafe, kahve, kampanya, QR kod, dijital kupon, kafe yönetimi" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kafin - Kahve Kampanyaları Dijitalleşti" />
+    <meta property="og:description" content="QR kod ile kahve takibi, otomatik kupon sistemi ve detaylı analizler." />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'customer-primary': '#472E1D',
+              'customer-secondary': '#FFA500',
+              'cafeowner-primary': '#0D3C0F',
+              'cafeowner-secondary': '#9FB49F',
+              'element-primary': '#F5F0DC',
+              'element-selected': '#FFF1C0',
+              'light-brown': '#888279',
+              'background': '#FCFCFC',
+            },
+            fontFamily: {
+              'lora': ['Lora', 'serif'],
+              'raleway': ['Raleway', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-
-      :root {
-        /* Customer Colors */
-        --customer-primary: #472e1d;
-        --customer-secondary: #ffa500;
-        --customer-gradient-from: #130800;
-        --customer-gradient-to: #472e1d;
-
-        /* Cafe Owner Colors */
-        --cafeowner-primary: #0d3c0f;
-        --cafeowner-secondary: #9fb49f;
-        --cafeowner-gradient-from: #020c03;
-        --cafeowner-gradient-to: #0a370d;
-
-        /* Element Colors */
-        --element-primary: #f5f0dc;
-        --element-selected: #fff1c0;
-        --element-horizontal-gradient-from: #f5f0dc;
-        --element-horizontal-gradient-to: #f9e6a1;
-        --element-vertical-gradient-from: #f9e6a1;
-        --element-vertical-gradient-to: #fff1c0;
-
-        /* Other Colors */
-        --light-brown: #888279;
-        --button-gradient-from: #402512;
-        --button-gradient-to: #6c4629;
-        --background: #fcfcfc;
-
-        /* Error Colors */
-        --error-red: #be0000;
-        --error-background: #eebebe;
-      }
-
       body {
-        margin: 0;
-        font-family: "Raleway", sans-serif;
-        touch-action: none;
+        font-family: 'Raleway', sans-serif;
       }
 
-      .temp {
-        display: flex;
-        height: 100dvh;
-        max-height: 100dvh;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(
-          to top,
-          var(--cafeowner-gradient-from),
-          var(--cafeowner-gradient-to)
-        );
-        position: relative;
-        overflow: hidden;
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Lora', serif;
       }
 
-      .temp .background-image {
-        width: unset;
-        height: 100dvh;
-        aspect-ratio: 1;
-        top: -40px;
-        z-index: 1;
-        filter: blur(2px) opacity(0.25);
+      .gradient-cafeowner {
+        background: linear-gradient(to top, #020c03, #0a370d);
       }
 
-      .temp .message {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 9999;
-        padding-bottom: 100px;
+      .gradient-customer {
+        background: linear-gradient(to top, #130800, #472e1d);
       }
 
-      .temp .message * {
-        color: var(--element-primary);
-        text-align: center;
-        margin: 0;
-      }
-
-      .temp .message h1 {
-        font-family: "Lora", sans-serif;
-        font-weight: 400;
-        font-size: 72px;
-      }
-
-      .temp .message p {
-        text-align: right;
-        margin-top: -1.5rem;
-      }
-
-      .temp .message .logo-image {
-        width: 350px;
-      }
-
-      @media screen and (max-width: 734px) {
-        .temp .message .logo-image {
-          width: 220px;
-        }
-        .temp .message p {
-          font-size: 12px;
-          margin-top: -1rem;
-        }
-      }
-
-      .temp .author {
-        position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-        margin: 0;
-        color: var(--element-primary);
-        font-size: 12px;
+      .gradient-element {
+        background: linear-gradient(135deg, #f5f0dc, #f9e6a1);
       }
     </style>
   </head>
-  <body>
-    <section class="temp">
-      <img
-        class="background-image"
-        src="./assets/coffee_beans.png"
-        alt="Kahve çekirdekleri."
-      />
-      <div class="message">
-        <div>
-          <img
-            class="logo-image"
-            src="./assets/logo_text.png"
-            alt="Kahve çekirdekleri."
-          />
-          <p>Çok yakında</p>
+
+  <body class="bg-background text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50" x-data="{ mobileMenuOpen: false }">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img src="./assets/logo_text_green.png" srcset="./assets/logo_text_green_2x.png 2x" alt="Kafin" class="h-8 sm:h-10" />
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a href="#nasil-calisir" class="text-gray-700 hover:text-cafeowner-primary transition">Nasıl Çalışır?</a>
+            <a href="#ozellikler" class="text-gray-700 hover:text-cafeowner-primary transition">Özellikler</a>
+            <a href="#faq" class="text-gray-700 hover:text-cafeowner-primary transition">SSS</a>
+            <a href="#indir" class="text-gray-700 hover:text-cafeowner-primary transition">İndir</a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-gray-700">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" x-transition class="md:hidden pb-4">
+          <a href="#nasil-calisir" @click="mobileMenuOpen = false" class="block py-2 text-gray-700 hover:text-cafeowner-primary">Nasıl Çalışır?</a>
+          <a href="#ozellikler" @click="mobileMenuOpen = false" class="block py-2 text-gray-700 hover:text-cafeowner-primary">Özellikler</a>
+          <a href="#faq" @click="mobileMenuOpen = false" class="block py-2 text-gray-700 hover:text-cafeowner-primary">SSS</a>
+          <a href="#indir" @click="mobileMenuOpen = false" class="block py-2 text-gray-700 hover:text-cafeowner-primary">İndir</a>
         </div>
       </div>
-      <p class="author">Ali Kerem Ata</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-cafeowner pt-24 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center relative z-10">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-element-primary mb-6">
+            Kahve Kampanyaları,<br/>Dijitalleşti
+          </h1>
+          <p class="text-lg sm:text-xl text-element-primary/90 mb-8 max-w-2xl mx-auto">
+            QR kod ile kahve takibi, otomatik kupon sistemi ve detaylı analizlerle kafecilik artık çok daha kolay.
+          </p>
+
+          <!-- Dual CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <a href="#indir" class="gradient-element text-cafeowner-primary px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition transform hover:scale-105 w-full sm:w-auto">
+              Kafe Sahibiyim
+            </a>
+            <a href="#indir" class="bg-white/10 backdrop-blur-sm border-2 border-element-primary text-element-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/20 transition w-full sm:w-auto">
+              Müşteriyim
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-4 max-w-3xl mx-auto">
+            <div class="text-center">
+              <div class="text-3xl sm:text-4xl font-bold text-customer-secondary">150+</div>
+              <div class="text-sm sm:text-base text-element-primary/80 mt-1">Kafe</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl sm:text-4xl font-bold text-customer-secondary">50K+</div>
+              <div class="text-sm sm:text-base text-element-primary/80 mt-1">Kahve</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl sm:text-4xl font-bold text-customer-secondary">5K+</div>
+              <div class="text-sm sm:text-base text-element-primary/80 mt-1">Kullanıcı</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Background decoration -->
+      <img src="./assets/coffee_beans.png" alt="" class="absolute top-0 left-0 w-full h-full object-cover opacity-5 pointer-events-none" />
     </section>
+
+    <!-- Nasıl Çalışır Section -->
+    <section id="nasil-calisir" class="py-20 px-4 sm:px-6 lg:px-8" style="background: linear-gradient(to bottom, #f9fafb, #ffffff);">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-cafeowner-primary mb-4">
+            Nasıl Çalışır?
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Hem müşteriler hem de kafe sahipleri için basit ve etkili
+          </p>
+        </div>
+
+        <!-- Müşteriler İçin -->
+        <div class="mb-20">
+          <h3 class="text-2xl sm:text-3xl font-semibold text-customer-primary mb-8 text-center">
+            Müşteriler İçin
+          </h3>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-customer-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl font-bold text-customer-secondary">1</span>
+              </div>
+              <h4 class="text-xl font-semibold mb-2">QR Kodunu Göster</h4>
+              <p class="text-gray-600">Kahve aldığınızda QR kodunuzu kafe çalışanına gösterin</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-customer-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl font-bold text-customer-secondary">2</span>
+              </div>
+              <h4 class="text-xl font-semibold mb-2">İlerlemeyi Takip Et</h4>
+              <p class="text-gray-600">Her kahve ile hediye kahvenize bir adım daha yaklaşın</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-customer-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl font-bold text-customer-secondary">3</span>
+              </div>
+              <h4 class="text-xl font-semibold mb-2">Bedava Kahve Kazan</h4>
+              <p class="text-gray-600">Hediye kahvenizi otomatik olarak kazanın ve kullanın</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kafe Sahipleri İçin -->
+        <div>
+          <h3 class="text-2xl sm:text-3xl font-semibold text-cafeowner-primary mb-8 text-center">
+            Kafe Sahipleri İçin
+          </h3>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-cafeowner-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl font-bold text-cafeowner-primary">1</span>
+              </div>
+              <h4 class="text-xl font-semibold mb-2">QR Kodu Tara</h4>
+              <p class="text-gray-600">Müşterinin QR kodunu tarayarak kahve sayısını artırın</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-cafeowner-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl font-bold text-cafeowner-primary">2</span>
+              </div>
+              <h4 class="text-xl font-semibold mb-2">Kampanyayı Yönet</h4>
+              <p class="text-gray-600">Kaç kahvede bir bedava verileceğini siz belirleyin</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-cafeowner-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl font-bold text-cafeowner-primary">3</span>
+              </div>
+              <h4 class="text-xl font-semibold mb-2">Analizleri İzle</h4>
+              <p class="text-gray-600">Müşteri davranışlarını analiz edin, satışlarınızı artırın</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Özellikler Section -->
+    <section id="ozellikler" class="py-20 px-4 sm:px-6 lg:px-8" style="background: linear-gradient(135deg, #f0fdf4 0%, #f9fafb 50%, #fef3c7 100%);">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-cafeowner-primary mb-4">
+            Özellikler
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            İhtiyacınız olan her şey tek bir uygulamada
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-16">
+          <!-- Kafe Sahipleri İçin Özellikler -->
+          <div>
+            <h3 class="text-2xl font-semibold text-cafeowner-primary mb-6 flex items-center">
+              <span class="w-2 h-8 bg-cafeowner-primary mr-3 rounded"></span>
+              Kafe Sahipleri İçin
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-cafeowner-primary mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h4 class="font-semibold mb-1">QR Kod Sistemi</h4>
+                  <p class="text-gray-600">Müşterileri hızlıca tarayın, kahve sayılarını otomatik artırın</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-cafeowner-primary mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h4 class="font-semibold mb-1">Çalışan Yönetimi</h4>
+                  <p class="text-gray-600">Çalışanlarınız için hesap oluşturun, performanslarını takip edin</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-cafeowner-primary mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h4 class="font-semibold mb-1">Detaylı Analizler</h4>
+                  <p class="text-gray-600">Satış istatistikleri, müşteri davranışları ve raporlar</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-cafeowner-primary mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h4 class="font-semibold mb-1">Esnek Kampanya Sistemi</h4>
+                  <p class="text-gray-600">Hediye kahve koşullarını istediğiniz gibi ayarlayın</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-cafeowner-primary mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h4 class="font-semibold mb-1">Galeri Yönetimi</h4>
+                  <p class="text-gray-600">Kafenizin fotoğraflarını ekleyin, müşterilerinize görün</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Müşteriler İçin Özellikler -->
+          <div>
+            <h3 class="text-2xl font-semibold text-customer-primary mb-6 flex items-center">
+              <span class="w-2 h-8 bg-customer-primary mr-3 rounded"></span>
+              Müşteriler İçin
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-customer-secondary mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h4 class="font-semibold mb-1">Tek QR Kod</h4>
+                  <p class="text-gray-600">Tüm kafeler için tek bir QR kod, basit ve hızlı</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-customer-secondary mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h4 class="font-semibold mb-1">Çoklu Kafe Takibi</h4>
+                  <p class="text-gray-600">Farklı kafelerdeki kampanyalarınızı aynı anda takip edin</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-customer-secondary mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h4 class="font-semibold mb-1">Dijital Kuponlar</h4>
+                  <p class="text-gray-600">Kazandığınız kuponları dijital olarak saklayın ve kullanın</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-customer-secondary mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h4 class="font-semibold mb-1">İlerleme Takibi</h4>
+                  <p class="text-gray-600">Bedava kahvenize kaç kahve kaldığını anında görün</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-customer-secondary mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <h4 class="font-semibold mb-1">Kafe Keşfi</h4>
+                  <p class="text-gray-600">Yakınınızdaki Kafin kullanıcısı kafeleri keşfedin</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 px-4 sm:px-6 lg:px-8" style="background: linear-gradient(to bottom, #ffffff, #f9fafb);">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-cafeowner-primary mb-4">
+            Sıkça Sorulan Sorular
+          </h2>
+          <p class="text-lg text-gray-600">
+            Merak ettiklerinizin cevapları burada
+          </p>
+        </div>
+
+        <div class="space-y-4" x-data="{ openFaq: null }">
+
+          <!-- FAQ 1 -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
+              <span class="font-semibold text-lg">Kafin nasıl çalışır?</span>
+              <svg class="w-5 h-5 transition-transform" :class="openFaq === 1 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div x-show="openFaq === 1" x-collapse class="px-6 pb-4">
+              <p class="text-gray-600">
+                Kafin, QR kod tabanlı bir kahve kampanya sistemidir. Müşteriler her kahve aldıklarında QR kodlarını gösterir, kahvenin ücreti ödendikten sonra kafe çalışanı/sahibi içilen kahve sayısını ilerletir. Kampanya tamamlandığında müşteri bir kupon kazanır. Kafe sahipleri ise kampanyalarını dijital olarak yönetebilir ve performanslarını takip edebilir.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
+              <span class="font-semibold text-lg">Kafin’in fiyatlandırması nasıl?</span>
+              <svg class="w-5 h-5 transition-transform" :class="openFaq === 2 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div x-show="openFaq === 2" x-collapse class="px-6 pb-4">
+              <p class="text-gray-600">
+                Kafin müşteriler için tamamen ücretsizdir. Kafe sahipleri için abonelik modeli bulunmaktadır. Paketler ve özellikler hakkında detaylı bilgiye uygulama içinden ulaşabilirsiniz.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
+              <span class="font-semibold text-lg">Kafemi nasıl eklerim?</span>
+              <svg class="w-5 h-5 transition-transform" :class="openFaq === 3 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div x-show="openFaq === 3" x-collapse class="px-6 pb-4">
+              <p class="text-gray-600">
+                Uygulamayı indirip kayıt olduktan sonra <strong>“İşletmeler için”</strong> bölümünden kafe sahibi hesabı oluşturabilirsiniz. Kafe bilgilerinizi girip kampanya ayarlarınızı yaptıktan sonra dakikalar içinde kullanmaya başlayabilirsiniz.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
+              <span class="font-semibold text-lg">Kaç kahvede bir kupon vermeliyim?</span>
+              <svg class="w-5 h-5 transition-transform" :class="openFaq === 4 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div x-show="openFaq === 4" x-collapse class="px-6 pb-4">
+              <p class="text-gray-600">
+                Kampanyanızda müşterilerin kaç kahve içtikten sonra kupon kazanacağını siz belirlersiniz. Bu koşullar her yılbaşında yeni yıl için güncellenebilir.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button @click="openFaq = openFaq === 5 ? null : 5" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
+              <span class="font-semibold text-lg">Müşterilerim birden fazla kafede kampanya takip edebilir mi?</span>
+              <svg class="w-5 h-5 transition-transform" :class="openFaq === 5 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div x-show="openFaq === 5" x-collapse class="px-6 pb-4">
+              <p class="text-gray-600">
+                Evet. Müşteriler tek bir hesapla farklı kafelerdeki kampanyalara katılabilir. Her kafe için ilerleme ve kuponlar ayrı ayrı takip edilir.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button @click="openFaq = openFaq === 6 ? null : 6" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
+              <span class="font-semibold text-lg">Çalışanlarım da QR kod tarayabilir mi?</span>
+              <svg class="w-5 h-5 transition-transform" :class="openFaq === 6 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div x-show="openFaq === 6" x-collapse class="px-6 pb-4">
+              <p class="text-gray-600">
+                Evet. Çalışanlarınız için hesap oluşturabilir ve QR kod tarama yetkisi verebilirsiniz. Yapılan işlemler sistem üzerinden takip edilir.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 7 -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button @click="openFaq = openFaq === 7 ? null : 7" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
+              <span class="font-semibold text-lg">Kazanılan kuponların geçerlilik süresi var mı?</span>
+              <svg class="w-5 h-5 transition-transform" :class="openFaq === 7 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div x-show="openFaq === 7" x-collapse class="px-6 pb-4">
+              <p class="text-gray-600">
+                Evet. Kazanılan kuponlar 30 gün boyunca geçerlidir. Süresi dolan kuponlar otomatik olarak silinir.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 8 -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button @click="openFaq = openFaq === 8 ? null : 8" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
+              <span class="font-semibold text-lg">Yılbaşında kampanya ilerlemem ne olur?</span>
+              <svg class="w-5 h-5 transition-transform" :class="openFaq === 8 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div x-show="openFaq === 8" x-collapse class="px-6 pb-4">
+              <p class="text-gray-600">
+                Her yıl 1 Ocak’ta kampanya ilerlemeleri sıfırlanır ve yeni yıl kampanyaları başlar. Daha önce kazanılmış kuponlar silinmez ve geçerlilik süresi içinde kullanılabilir. Kafe sahipleri 1–10 Ocak tarihleri arasında yeni yıl kampanya koşullarını güncelleyebilir.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 9 -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button @click="openFaq = openFaq === 9 ? null : 9" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
+              <span class="font-semibold text-lg">Hangi platformlarda kullanılabilir?</span>
+              <svg class="w-5 h-5 transition-transform" :class="openFaq === 9 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div x-show="openFaq === 9" x-collapse class="px-6 pb-4">
+              <p class="text-gray-600">
+                Kafin, iOS (iPhone) ve Android cihazlarda kullanılabilir. App Store ve Google Play üzerinden indirebilirsiniz.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- İndir Section -->
+    <section id="indir" class="gradient-cafeowner py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-element-primary mb-6">
+          Hemen İndirin, Kullanmaya Başlayın
+        </h2>
+        <p class="text-lg text-element-primary/90 mb-12 max-w-2xl mx-auto">
+          Kafin'i indirerek kahve kampanyalarınızı dijitalleştirin. Hem kafe sahipleri hem müşteriler için ücretsiz.
+        </p>
+
+        <!-- App Store Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <a href="#" class="inline-block bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition flex items-center space-x-3">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+            </svg>
+            <div class="text-left">
+              <div class="text-xs">Download on the</div>
+              <div class="text-lg font-semibold -mt-1">App Store</div>
+            </div>
+          </a>
+          <a href="#" class="inline-block bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition flex items-center space-x-3">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+            </svg>
+            <div class="text-left">
+              <div class="text-xs">GET IT ON</div>
+              <div class="text-lg font-semibold -mt-1">Google Play</div>
+            </div>
+          </a>
+        </div>
+
+        <p class="text-sm text-element-primary/70">
+          iOS 14.0+ ve Android 8.0+ ile uyumlu
+        </p>
+      </div>
+      <img src="./assets/coffee_beans.png" alt="" class="absolute top-0 right-0 w-1/2 h-full object-cover opacity-5 pointer-events-none" />
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <!-- Logo & About -->
+          <div class="md:col-span-2">
+            <img src="./assets/logo_text.png" srcset="./assets/logo_text_2x.png 2x" alt="Kafin" class="h-10 mb-4 brightness-150" />
+            <p class="text-sm text-gray-400 max-w-md">
+              Kafin ile kahve kampanyalarınızı dijitalleştirin. QR kod tabanlı sistem, otomatik kupon yönetimi ve detaylı analizler.
+            </p>
+          </div>
+
+          <!-- Hızlı Linkler -->
+          <div>
+            <h4 class="font-semibold text-white mb-4">Hızlı Linkler</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#nasil-calisir" class="hover:text-white transition">Nasıl Çalışır?</a></li>
+              <li><a href="#ozellikler" class="hover:text-white transition">Özellikler</a></li>
+              <li><a href="#faq" class="hover:text-white transition">SSS</a></li>
+              <li><a href="#indir" class="hover:text-white transition">İndir</a></li>
+            </ul>
+          </div>
+
+          <!-- İletişim -->
+          <div>
+            <h4 class="font-semibold text-white mb-4">İletişim</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="mailto:info@kafin.app" class="hover:text-white transition">info@kafin.app</a></li>
+              <li><a href="#" class="hover:text-white transition">Instagram</a></li>
+              <li><a href="#" class="hover:text-white transition">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+          <p>&copy; 2025 Kafin. Tüm hakları saklıdır.</p>
+          <p class="mt-2">Developed by <a href="https://alikeremata.com" target="_blank" class="hover:text-white transition">Ali Kerem Ata</a></p>
+        </div>
+      </div>
+    </footer>
+
   </body>
 </html>
