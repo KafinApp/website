@@ -304,6 +304,11 @@
               >Nasıl Çalışır</a
             >
             <a
+              href="#fiyatlar"
+              class="text-cream-primary/80 hover:text-cream-primary transition text-sm font-medium"
+              >Fiyatlar</a
+            >
+            <a
               href="#sss"
               class="text-cream-primary/80 hover:text-cream-primary transition text-sm font-medium"
               >SSS</a
@@ -361,6 +366,12 @@
             @click="mobileOpen = false"
             class="block py-2 text-cream-primary/80 hover:text-cream-primary"
             >Nasıl Çalışır</a
+          >
+          <a
+            href="#fiyatlar"
+            @click="mobileOpen = false"
+            class="block py-2 text-cream-primary/80 hover:text-cream-primary"
+            >Fiyatlar</a
           >
           <a
             href="#sss"
@@ -1246,6 +1257,350 @@
       </div>
     </section>
 
+    <!-- ====== PRICING SECTION ====== -->
+    <section id="fiyatlar" class="py-20 px-4 sm:px-6 lg:px-8 bg-surface">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cafe-primary mb-4"
+          >
+            Basit ve Şeffaf Fiyatlandırma
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            İhtiyacınıza göre planınızı seçin. İstediğiniz zaman yükseltin.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <!-- Basic Plan -->
+          <div class="card-light rounded-2xl p-8 border-2 border-gray-200">
+            <div class="text-center mb-8">
+              <h3 class="text-2xl font-bold text-cafe-primary mb-2">
+                Başlangıç
+              </h3>
+              <p class="text-gray-500 text-sm">Küçük kafeler için ideal</p>
+            </div>
+
+            <div class="text-center mb-8">
+              <div class="flex items-end justify-center gap-1">
+                <span class="text-5xl font-bold text-cafe-primary">349</span>
+                <span class="text-xl text-gray-500 mb-2">TL/ay</span>
+              </div>
+              <p class="text-sm text-gray-500 mt-2">
+                veya 3.499 TL/yıl
+                <span class="text-cafe-secondary font-medium"
+                  >(2 ay bedava)</span
+                >
+              </p>
+            </div>
+
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-gray-700">QR ile kahve takibi</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-gray-700">Otomatik kupon sistemi</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-gray-700">Müşteri listesi</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-gray-700">Son aktiviteler</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-gray-300 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+                <span class="text-gray-400">Çalışan yönetimi</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-gray-300 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+                <span class="text-gray-400">Detaylı istatistikler</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-gray-300 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+                <span class="text-gray-400">Bildirim gönderme</span>
+              </li>
+            </ul>
+
+            <a
+              href="#baslat"
+              class="block w-full py-3 px-6 text-center rounded-full border-2 border-cafe-primary text-cafe-primary font-semibold hover:bg-cafe-primary hover:text-white transition"
+            >
+              Başlangıç'ı Seç
+            </a>
+          </div>
+
+          <!-- Premium Plan -->
+          <div
+            class="card-light rounded-2xl p-8 border-2 border-cafe-secondary relative overflow-hidden"
+          >
+            <!-- Popular Badge -->
+            <div class="absolute top-4 right-4">
+              <span
+                class="bg-cafe-secondary text-white text-xs font-bold px-3 py-1 rounded-full"
+                >Popüler</span
+              >
+            </div>
+
+            <div class="text-center mb-8">
+              <h3 class="text-2xl font-bold text-cafe-primary mb-2">
+                Profesyonel
+              </h3>
+              <p class="text-gray-500 text-sm">Büyümek isteyen kafeler için</p>
+            </div>
+
+            <div class="text-center mb-8">
+              <div class="flex items-end justify-center gap-1">
+                <span class="text-5xl font-bold text-cafe-primary">899</span>
+                <span class="text-xl text-gray-500 mb-2">TL/ay</span>
+              </div>
+              <p class="text-sm text-gray-500 mt-2">
+                veya 8.999 TL/yıl
+                <span class="text-cafe-secondary font-medium"
+                  >(2 ay bedava)</span
+                >
+              </p>
+            </div>
+
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-gray-700">QR ile kahve takibi</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-gray-700">Otomatik kupon sistemi</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-gray-700">Müşteri listesi</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-gray-700">Son aktiviteler</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-gray-700"
+                  ><strong>7'ye kadar çalışan</strong> ekleyin</span
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-gray-700"
+                  ><strong>Detaylı istatistikler</strong> ve liderlik
+                  tablosu</span
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-gray-700"
+                  ><strong>Bildirim gönderme</strong> ile müşterilere
+                  ulaşın</span
+                >
+              </li>
+            </ul>
+
+            <a
+              href="#baslat"
+              class="block w-full py-3 px-6 text-center rounded-full bg-cafe-primary text-white font-semibold hover:bg-cafe-secondary/90 transition"
+            >
+              Profesyonel'i Seç
+            </a>
+          </div>
+        </div>
+
+        <!-- Money back guarantee -->
+        <p class="text-center mt-10 text-gray-500 text-sm">
+          <svg
+            class="w-5 h-5 inline-block mr-1 -mt-0.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+            />
+          </svg>
+          2 hafta ücretsiz deneyin. Beğenmezseniz ödeme yok.
+        </p>
+      </div>
+    </section>
+
     <!-- ====== CTA SECTION ====== -->
     <section id="baslat" class="py-20 px-4 sm:px-6 lg:px-8 bg-surface">
       <div class="max-w-4xl mx-auto text-center">
@@ -1264,9 +1619,10 @@
 
         <h2
           class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cafe-primary mb-6"
+          style="line-height: 1.0785"
         >
           İlk 100 Kafe İçin<br />
-          <span class="text-cafe-secondary">2 Hafta Tamamen Ücretsiz</span>
+          <span class="text-cafe-secondary">2 Hafta Ücretsiz</span>
         </h2>
 
         <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
@@ -1457,9 +1813,10 @@
             </button>
             <div x-show="openFaq === 3" x-collapse class="px-6 pb-4">
               <p class="text-cream-primary/70">
-                Evet! 7'ye kadar çalışan hesabı oluşturabilirsiniz. Her
-                çalışanın kendi kullanıcı adı ve şifresi olur. Kim ne kadar
-                sattı, hepsini takip edebilirsiniz.
+                Evet! Profesyonel planda 7'ye kadar çalışan hesabı
+                oluşturabilirsiniz. Her çalışanın kendi kullanıcı adı ve şifresi
+                olur. Kim ne kadar sattı, liderlik tablosunda takip
+                edebilirsiniz.
               </p>
             </div>
           </div>
@@ -1558,6 +1915,43 @@
                 İlk 100 kafe için tüm özellikler 2 hafta boyunca tamamen
                 ücretsiz. 2 hafta sonunda beğendiyseniz devam edersiniz,
                 beğenmediyseniz hiçbir şey ödemezsiniz.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 7 -->
+          <div class="card-dark rounded-xl overflow-hidden">
+            <button
+              @click="openFaq = openFaq === 7 ? null : 7"
+              class="w-full px-6 py-4 text-left flex justify-between items-center"
+            >
+              <span class="font-semibold text-cream-primary"
+                >Başlangıç ve Profesyonel plan arasındaki fark nedir?</span
+              >
+              <svg
+                class="w-5 h-5 text-cream-primary/50 transition-transform"
+                :class="openFaq === 7 && 'rotate-180'"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div x-show="openFaq === 7" x-collapse class="px-6 pb-4">
+              <p class="text-cream-primary/70">
+                <strong>Başlangıç (349 TL/ay):</strong> QR ile kahve takibi,
+                otomatik kupon sistemi, müşteri listesi ve son aktiviteler. Tek
+                başınıza çalışan küçük kafeler için ideal.<br /><br />
+                <strong>Profesyonel (899 TL/ay):</strong> Tüm Başlangıç
+                özellikleri + 7'ye kadar çalışan yönetimi, detaylı
+                istatistikler, liderlik tablosu ve müşterilere bildirim
+                gönderme. Ekibiyle birlikte büyümek isteyen kafeler için.
               </p>
             </div>
           </div>
