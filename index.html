@@ -418,13 +418,13 @@
             >
               <a
                 href="#baslat"
-                class="btn-primary px-8 flex items-center rounded-full text-lg"
+                class="btn-primary px-8 py-2 flex items-center justify-center rounded-full text-lg"
               >
                 Ücretsiz Dene
               </a>
               <a
                 href="#nasil-calisir"
-                class="btn-secondary px-8 py-2 flex items-center rounded-full text-lg"
+                class="btn-secondary px-8 py-2 flex items-center justify-center rounded-full text-lg"
               >
                 Nasıl Çalışır?
               </a>
@@ -437,58 +437,41 @@
                 <div class="text-cream-primary/60 text-sm mt-1">Aktif Kafe</div>
               </div>
               <div class="text-center lg:text-left">
-                <div class="stat-number gradient-text">2K+</div>
+                <div class="stat-number gradient-text">1K+</div>
                 <div class="text-cream-primary/60 text-sm mt-1">
                   Mutlu Müşteri
                 </div>
               </div>
               <div class="text-center lg:text-left">
-                <div class="stat-number gradient-text">10K+</div>
+                <div class="stat-number gradient-text">2K+</div>
                 <div class="text-cream-primary/60 text-sm mt-1">
-                  Kahve Takibi
+                  Kahve İşlemi
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Right: Hero Asset -->
-          <div class="relative order-first lg:order-last">
-            <!--
-                    ========================================
-                    ASSET #1: HERO IMAGE OR VIDEO
-                    ========================================
-                    Öneriler:
-                    - Kafe sahibi telefonda QR taratırken (gerçek ortamda)
-                    - Dashboard ekranının phone mockup içinde gösterimi
-                    - Kısa video loop: QR tarama anı
-                    - 3D phone mockup ile uygulama ekranı
-
-                    Boyut: 16:9 veya kare, min 800px genişlik
-                    Format: PNG/WebP (resim) veya MP4/GIF (video)
-                    ========================================
-                    -->
-            <div
-              class="asset-placeholder aspect-[4/3] sm:aspect-video rounded-2xl"
+          <div class="relative order-first lg:order-last z-20">
+            <video
+              class="w-full aspect-[4/3] rounded-2xl object-cover"
+              autoplay
+              muted
+              playsinline
+              poster="./assets/hero_endframe.png"
             >
-              <svg
-                class="w-16 h-16 mb-3 opacity-50"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 3a3 3 0 100 6 3 3 0 000-6z"
-                />
-              </svg>
-              <span class="font-bold text-lg">ASSET #1: Hero Görseli</span>
-              <span class="mt-2 max-w-xs opacity-75"
-                >Kafe sahibi QR taratırken veya dashboard ekranı gösteren phone
-                mockup</span
-              >
-            </div>
+              <source src="./assets/hero_video.webm" type="video/webm" />
+              <!-- Fallback image if video doesn't load -->
+              <img
+                src="./assets/hero_endframe.png"
+                alt="Kafin uygulaması"
+                class="w-full rounded-2xl"
+              />
+            </video>
 
             <!-- Floating Card -->
             <div
-              class="absolute -bottom-4 -left-4 card-dark rounded-xl p-4 hidden sm:flex items-center gap-3"
+              class="absolute -bottom-4 left-20 card-dark rounded-xl p-4 hidden sm:flex items-center gap-3"
             >
               <div
                 class="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center"
@@ -555,7 +538,8 @@
             </div>
             <h3 class="text-xl font-bold text-cafe-primary mb-3">Veri Yok</h3>
             <p class="text-gray-600">
-              Kim geldi, ne zaman geldi, kaç kere geldi? Hiçbir fikriniz yok.
+              Kim geldi, ne zaman geldi,<br />
+              kaç kere geldi? Hiçbir fikriniz yok.<br />
               Kararlarınızı tahminle veriyorsunuz.
             </p>
           </div>
@@ -597,8 +581,9 @@
               Zaman Kaybı
             </h3>
             <p class="text-gray-600">
-              Kart bastırmak, damga aramak, kayıp kartları yönetmek... Tüm
-              bunlar için harcadığınız zaman, kahve yapabilirdiniz.
+              Kart bastırmak, damga aramak,<br />
+              kayıp kartları yönetmek... Tüm bunlar için
+              harcadığınız&nbsp;zamanla, kahve yapabilirdiniz.
             </p>
           </div>
         </div>
@@ -650,8 +635,7 @@
 
             <p class="text-lg text-cream-primary/80 mb-8">
               Tek bir uygulama ile müşterilerinizi takip edin, sadakat
-              programınızı yönetin ve işletmenizi büyütün. Yazılım bilgisi
-              gerektirmez.
+              programınızı yönetin ve işletmenizi büyütün. Çok basit!
             </p>
 
             <div class="space-y-5">
@@ -895,8 +879,8 @@
               QR Tarama Sistemi
             </h3>
             <p class="text-cream-primary/70 text-sm">
-              Müşteri QR'ını taratır, kahve sayısı otomatik artar. Kart aramak,
-              damga basmak yok.
+              Müşteri QR'ını taratır, kahve sayısı artar. Kart aramak, damga
+              basmak yok.
             </p>
           </div>
 
@@ -921,8 +905,8 @@
               Çalışan Yönetimi
             </h3>
             <p class="text-cream-primary/70 text-sm">
-              7'ye kadar çalışan ekleyin. Kim ne kadar sattı? Skor tablosuyla
-              takip edin, motive edin.
+              Çalışan ekleyin. Kim ne kadar sattı? Skor tablosuyla takip edin,
+              motive edin.
             </p>
           </div>
 
@@ -973,8 +957,8 @@
               Esnek Kampanya
             </h3>
             <p class="text-cream-primary/70 text-sm">
-              3 kahvede mi bedava, 15'te mi? Siz belirleyin. Her yıl güncelleme
-              şansınız var.
+              3 kahvede bir mi bedava, 15'te mi? Siz belirleyin. Her yılbaşında
+              (1-10 Ocak) güncelleme şansınız var.
             </p>
           </div>
 
@@ -1145,7 +1129,7 @@
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="text-3xl sm:text-4xl font-bold text-cream-primary mb-4">
-            Müşterileriniz Ne Yaşar?
+            Müşteri Tecrübesi
           </h2>
           <p class="text-lg text-cream-primary/70">
             3 adımda bedava kahve. Bu kadar basit.
@@ -1251,8 +1235,8 @@
         </h2>
 
         <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
-          Kredi kartı gerekmez. Kurulum desteği dahil. Beğenmezseniz, hiçbir şey
-          ödemezsiniz.
+          <!-- Kredi kartı gerekmez.-->
+          Beğenmezseniz, hiçbir şey ödemezsiniz.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -1640,19 +1624,19 @@
                         - https://developer.apple.com/app-store/marketing/guidelines/
                         - https://play.google.com/intl/en_us/badges/
                         -->
-              <a href="#" class="block">
-                <div
-                  class="asset-placeholder !py-2 !px-3 !rounded-lg !flex-row !gap-2 !text-xs"
-                >
-                  App Store Badge
-                </div>
+              <a href="#" class="block hover:opacity-80 transition">
+                <img
+                  src="./assets/app_store.svg"
+                  alt="App Store'dan İndir"
+                  class="h-10"
+                />
               </a>
-              <a href="#" class="block">
-                <div
-                  class="asset-placeholder !py-2 !px-3 !rounded-lg !flex-row !gap-2 !text-xs"
-                >
-                  Google Play Badge
-                </div>
+              <a href="#" class="block hover:opacity-80 transition">
+                <img
+                  src="./assets/play_store.svg"
+                  alt="Google Play'den İndir"
+                  class="h-10"
+                />
               </a>
             </div>
           </div>
