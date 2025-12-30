@@ -136,6 +136,11 @@
         background-clip: text;
       }
 
+      /* Icon tinting to match cafe-primary (#0d3c0f) */
+      .icon-cafe-primary {
+        filter: invert(15%) sepia(40%) saturate(1000%) hue-rotate(85deg) brightness(95%) contrast(95%);
+      }
+
       /* Buttons */
       .btn-primary {
         background: linear-gradient(135deg, #f5f0dc 0%, #f9e6a1 100%);
@@ -467,9 +472,8 @@
             <video
               id="heroVideo"
               class="w-full aspect-[4/3] rounded-2xl object-cover pointer-events-none select-none"
-              style="-webkit-touch-callout: none;"
+              style="-webkit-touch-callout: none"
               autoplay
-              loop
               muted
               playsinline
               disablepictureinpicture
@@ -548,10 +552,8 @@
                     Öneri: Kapalı göz, soru işareti, boş grafik ikonu
                     Boyut: 64x64 veya 80x80 SVG/PNG
                     -->
-            <div
-              class="asset-placeholder asset-placeholder-light w-20 h-20 mx-auto mb-6 !rounded-full !p-0"
-            >
-              <span class="text-xs font-semibold">ICON #2</span>
+            <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+              <img src="./assets/eye-closed.svg" alt="Veri Yok" class="w-16 h-16 icon-cafe-primary" />
             </div>
             <h3 class="text-xl font-bold text-cafe-primary mb-3">Veri Yok</h3>
             <p class="text-gray-600">
@@ -568,10 +570,8 @@
                     Öneri: Maske, kırık kalkan, uyarı işareti
                     Boyut: 64x64 veya 80x80 SVG/PNG
                     -->
-            <div
-              class="asset-placeholder asset-placeholder-light w-20 h-20 mx-auto mb-6 !rounded-full !p-0"
-            >
-              <span class="text-xs font-semibold">ICON #3</span>
+            <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+              <img src="./assets/mask.svg" alt="Suistimal" class="w-16 h-16 icon-cafe-primary" />
             </div>
             <h3 class="text-xl font-bold text-cafe-primary mb-3">
               Suistimal Kolay
@@ -589,10 +589,8 @@
                     Öneri: Kum saati, dönen saat, yorgun yüz
                     Boyut: 64x64 veya 80x80 SVG/PNG
                     -->
-            <div
-              class="asset-placeholder asset-placeholder-light w-20 h-20 mx-auto mb-6 !rounded-full !p-0"
-            >
-              <span class="text-xs font-semibold">ICON #4</span>
+            <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+              <img src="./assets/hourglass.svg" alt="Zaman Kaybı" class="w-16 h-16 icon-cafe-primary" />
             </div>
             <h3 class="text-xl font-bold text-cafe-primary mb-3">
               Zaman Kaybı
@@ -2099,17 +2097,19 @@
 
     <script>
       // Detect Safari and serve appropriate video format
-      (function() {
-        const video = document.getElementById('heroVideo');
-        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+      (function () {
+        const video = document.getElementById("heroVideo");
+        const isSafari = /^((?!chrome|android).)*safari/i.test(
+          navigator.userAgent
+        );
 
-        const source = document.createElement('source');
+        const source = document.createElement("source");
         if (isSafari) {
-          source.src = './assets/hero_video.mp4';
-          source.type = 'video/mp4';
+          source.src = "./assets/hero_video.mp4";
+          source.type = "video/mp4";
         } else {
-          source.src = './assets/hero_video.webm';
-          source.type = 'video/webm';
+          source.src = "./assets/hero_video.webm";
+          source.type = "video/webm";
         }
 
         video.insertBefore(source, video.firstChild);
