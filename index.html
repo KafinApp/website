@@ -129,6 +129,10 @@
         background: linear-gradient(180deg, #0d3c0f 0%, #062108 100%);
       }
 
+      .gradient-section-customer {
+        background: linear-gradient(180deg, #130800 0%, #472e1d 100%);
+      }
+
       .gradient-text {
         background: linear-gradient(135deg, #f5f0dc 0%, #f9e6a1 100%);
         -webkit-background-clip: text;
@@ -138,7 +142,8 @@
 
       /* Icon tinting to match cafe-primary (#0d3c0f) */
       .icon-cafe-primary {
-        filter: invert(15%) sepia(40%) saturate(1000%) hue-rotate(85deg) brightness(95%) contrast(95%);
+        filter: invert(15%) sepia(40%) saturate(1000%) hue-rotate(85deg)
+          brightness(95%) contrast(95%);
       }
 
       /* Buttons */
@@ -530,256 +535,6 @@
       />
     </section>
 
-    <!-- ====== PROBLEM SECTION ====== -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-surface">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <h2
-            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cafe-primary mb-4"
-          >
-            Eski Kağıt Kartlar
-          </h2>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Geleneksel sadakat kartları işinize yaramıyor. İşte nedeni:
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- Problem 1 -->
-          <div class="card-light rounded-2xl p-8 text-center">
-            <!--
-                    ASSET #2: ICON - Veri Yok / Kör
-                    Öneri: Kapalı göz, soru işareti, boş grafik ikonu
-                    Boyut: 64x64 veya 80x80 SVG/PNG
-                    -->
-            <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-              <img src="./assets/eye-closed.svg" alt="Veri Yok" class="w-16 h-16 icon-cafe-primary" />
-            </div>
-            <h3 class="text-xl font-bold text-cafe-primary mb-3">Veri Yok</h3>
-            <p class="text-gray-600">
-              Kim geldi, ne zaman geldi,<br />
-              kaç kere geldi? Hiçbir fikriniz yok.<br />
-              Kararlarınızı tahminle veriyorsunuz.
-            </p>
-          </div>
-
-          <!-- Problem 2 -->
-          <div class="card-light rounded-2xl p-8 text-center">
-            <!--
-                    ASSET #3: ICON - Suistimal / Hile
-                    Öneri: Maske, kırık kalkan, uyarı işareti
-                    Boyut: 64x64 veya 80x80 SVG/PNG
-                    -->
-            <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-              <img src="./assets/mask.svg" alt="Suistimal" class="w-16 h-16 icon-cafe-primary" />
-            </div>
-            <h3 class="text-xl font-bold text-cafe-primary mb-3">
-              Suistimal Kolay
-            </h3>
-            <p class="text-gray-600">
-              Müşteriler kartları kendileri damgalıyor. Çalışanlar arkadaşlarına
-              bedava kahve veriyor. Kontrol sizde değil.
-            </p>
-          </div>
-
-          <!-- Problem 3 -->
-          <div class="card-light rounded-2xl p-8 text-center">
-            <!--
-                    ASSET #4: ICON - Zaman Kaybı
-                    Öneri: Kum saati, dönen saat, yorgun yüz
-                    Boyut: 64x64 veya 80x80 SVG/PNG
-                    -->
-            <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-              <img src="./assets/hourglass.svg" alt="Zaman Kaybı" class="w-16 h-16 icon-cafe-primary" />
-            </div>
-            <h3 class="text-xl font-bold text-cafe-primary mb-3">
-              Zaman Kaybı
-            </h3>
-            <p class="text-gray-600">
-              Kart bastırmak, damga aramak,<br />
-              kayıp kartları yönetmek... Tüm bunlar için
-              harcadığınız&nbsp;zamanla, kahve yapabilirdiniz.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====== SOLUTION SECTION ====== -->
-    <section class="gradient-section py-20 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <!-- Left: Screenshot -->
-          <div>
-            <!--
-                    ========================================
-                    ASSET #5: DASHBOARD SCREENSHOT
-                    ========================================
-                    Öneriler:
-                    - Kafe sahibi dashboard ekran görüntüsü
-                    - Grafikler, istatistikler, son aktiviteler görünmeli
-                    - Phone mockup içinde veya düz screenshot
-
-                    Boyut: 16:9, min 1200px genişlik
-                    Format: PNG/WebP
-                    ========================================
-                    -->
-            <div class="asset-placeholder aspect-video rounded-2xl">
-              <svg
-                class="w-16 h-16 mb-3 opacity-50"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h4v4H7V7zm6 0h4v2h-4V7zm0 4h4v2h-4v-2zm-6 2h4v4H7v-4z"
-                />
-              </svg>
-              <span class="font-bold text-lg">ASSET #5: Dashboard Ekranı</span>
-              <span class="mt-2 max-w-xs opacity-75"
-                >Grafikler, günlük satışlar, aktivite akışı gösteren
-                dashboard</span
-              >
-            </div>
-          </div>
-
-          <!-- Right: Copy -->
-          <div>
-            <h2 class="text-3xl sm:text-4xl font-bold text-cream-primary mb-6">
-              Kafin ile Tanışın
-            </h2>
-
-            <p class="text-lg text-cream-primary/80 mb-8">
-              Tek bir uygulama ile müşterilerinizi takip edin, ödül programınızı
-              yönetin ve işletmenizi büyütün. Çok basit!
-            </p>
-
-            <div class="space-y-5">
-              <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 bg-cream-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                >
-                  <svg
-                    class="w-4 h-4 text-cream-gold"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2.5"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-cream-primary mb-1">
-                    Dijital QR Sistemi
-                  </h4>
-                  <p class="text-cream-primary/70">
-                    Müşteriler tek bir QR koduyla tüm kafelerinizde puan
-                    kazanır.
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 bg-cream-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                >
-                  <svg
-                    class="w-4 h-4 text-cream-gold"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2.5"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-cream-primary mb-1">
-                    Otomatik Kuponlar
-                  </h4>
-                  <p class="text-cream-primary/70">
-                    Belirlediğiniz sayıya ulaşınca kupon otomatik oluşur. Manuel
-                    iş yok.
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 bg-cream-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                >
-                  <svg
-                    class="w-4 h-4 text-cream-gold"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2.5"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-cream-primary mb-1">
-                    Gerçek Zamanlı Analitik
-                  </h4>
-                  <p class="text-cream-primary/70">
-                    Kim, ne zaman, ne kadar? Tüm veriler elinizin altında.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Cost Savings Callout -->
-            <div
-              class="mt-8 p-5 bg-cream-gold/10 border border-cream-gold/30 rounded-xl"
-            >
-              <div class="flex items-start gap-4">
-                <div
-                  class="w-10 h-10 bg-cream-gold/20 rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <svg
-                    class="w-5 h-5 text-cream-gold"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-bold text-cream-primary mb-1">
-                    Kendi Uygulamanızı Geliştirmeyin
-                  </h4>
-                  <p class="text-cream-primary/70 text-sm">
-                    Özel bir uygulama geliştirmek yüz binlerce lira ve aylarca
-                    zaman demek. Kafin ile aynı teknolojiyi aylık küçük bir
-                    ücretle kullanın.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ====== SPEED SECTION ====== -->
     <section id="nasil-calisir" class="py-20 px-4 sm:px-6 lg:px-8 bg-surface">
       <div class="max-w-7xl mx-auto">
@@ -885,6 +640,273 @@
                 veya GIF</span
               >
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SOLUTION SECTION ====== -->
+    <section class="gradient-section py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <!-- Left: Screenshot -->
+          <div>
+            <!--
+                    ========================================
+                    ASSET #5: DASHBOARD SCREENSHOT
+                    ========================================
+                    Öneriler:
+                    - Kafe sahibi dashboard ekran görüntüsü
+                    - Grafikler, istatistikler, son aktiviteler görünmeli
+                    - Phone mockup içinde veya düz screenshot
+
+                    Boyut: 16:9, min 1200px genişlik
+                    Format: PNG/WebP
+                    ========================================
+                    -->
+            <div class="asset-placeholder aspect-video rounded-2xl">
+              <svg
+                class="w-16 h-16 mb-3 opacity-50"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h4v4H7V7zm6 0h4v2h-4V7zm0 4h4v2h-4v-2zm-6 2h4v4H7v-4z"
+                />
+              </svg>
+              <span class="font-bold text-lg">ASSET #5: Dashboard Ekranı</span>
+              <span class="mt-2 max-w-xs opacity-75"
+                >Grafikler, günlük satışlar, aktivite akışı gösteren
+                dashboard</span
+              >
+            </div>
+          </div>
+
+          <!-- Right: Copy -->
+          <div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-cream-primary mb-6">
+              Kafin ile Tanışın
+            </h2>
+
+            <p class="text-lg text-cream-primary/80 mb-8">
+              Tek bir uygulama ile müşterilerinizi takip edin, ödül programınızı
+              yönetin ve işletmenizi büyütün. Çok basit!
+            </p>
+
+            <div class="space-y-5">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-8 h-8 bg-cream-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                >
+                  <svg
+                    class="w-4 h-4 text-cream-gold"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-cream-primary mb-1">
+                    Dijital QR Sistemi
+                  </h4>
+                  <p class="text-cream-primary/70">
+                    Müşteriler tek bir QR koduyla ilerleme kaydeder.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-8 h-8 bg-cream-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                >
+                  <svg
+                    class="w-4 h-4 text-cream-gold"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-cream-primary mb-1">
+                    Otomatik Kuponlar
+                  </h4>
+                  <p class="text-cream-primary/70">
+                    Belirlediğiniz sayıya ulaşınca kupon otomatik oluşur. Manuel
+                    iş yok.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-8 h-8 bg-cream-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                >
+                  <svg
+                    class="w-4 h-4 text-cream-gold"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-cream-primary mb-1">
+                    Gerçek Zamanlı Analitik
+                  </h4>
+                  <p class="text-cream-primary/70">
+                    Kim, ne zaman, ne kadar? Tüm veriler elinizin altında.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cost Savings Callout -->
+            <div
+              class="mt-8 p-5 bg-cream-gold/10 border border-cream-gold/30 rounded-xl"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 bg-cream-gold/20 rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-5 h-5 text-cream-gold"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-cream-primary mb-1">
+                    Kendi Uygulamanızı Geliştirmeyin
+                  </h4>
+                  <p class="text-cream-primary/70 text-sm">
+                    Özel bir uygulama geliştirmek yüz binlerce lira ve aylarca
+                    zaman demek. Kafin ile aynı teknolojiyi aylık küçük bir
+                    ücretle kullanın.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== PROBLEM SECTION ====== -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-surface">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cafe-primary mb-4"
+          >
+            Eski Kağıt Kartlar
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Geleneksel sadakat kartları işinize yaramıyor. İşte nedeni:
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Problem 1 -->
+          <div class="card-light rounded-2xl p-8 text-center">
+            <!--
+                    ASSET #2: ICON - Veri Yok / Kör
+                    Öneri: Kapalı göz, soru işareti, boş grafik ikonu
+                    Boyut: 64x64 veya 80x80 SVG/PNG
+                    -->
+            <div
+              class="w-20 h-20 mx-auto mb-6 flex items-center justify-center"
+            >
+              <img
+                src="./assets/eye-closed.svg"
+                alt="Veri Yok"
+                class="w-16 h-16 icon-cafe-primary"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-cafe-primary mb-3">Veri Yok</h3>
+            <p class="text-gray-600">
+              Kim geldi, ne zaman geldi,<br />
+              kaç kere geldi? Hiçbir fikriniz yok.<br />
+              Kararlarınızı tahminle veriyorsunuz.
+            </p>
+          </div>
+
+          <!-- Problem 2 -->
+          <div class="card-light rounded-2xl p-8 text-center">
+            <!--
+                    ASSET #3: ICON - Suistimal / Hile
+                    Öneri: Maske, kırık kalkan, uyarı işareti
+                    Boyut: 64x64 veya 80x80 SVG/PNG
+                    -->
+            <div
+              class="w-20 h-20 mx-auto mb-6 flex items-center justify-center"
+            >
+              <img
+                src="./assets/mask.svg"
+                alt="Suistimal"
+                class="w-16 h-16 icon-cafe-primary"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-cafe-primary mb-3">
+              Suistimal Kolay
+            </h3>
+            <p class="text-gray-600">
+              Müşteriler kartları kendileri damgalıyor. Çalışanlar arkadaşlarına
+              bedava kahve veriyor. Kontrol sizde değil.
+            </p>
+          </div>
+
+          <!-- Problem 3 -->
+          <div class="card-light rounded-2xl p-8 text-center">
+            <!--
+                    ASSET #4: ICON - Zaman Kaybı
+                    Öneri: Kum saati, dönen saat, yorgun yüz
+                    Boyut: 64x64 veya 80x80 SVG/PNG
+                    -->
+            <div
+              class="w-20 h-20 mx-auto mb-6 flex items-center justify-center"
+            >
+              <img
+                src="./assets/hourglass.svg"
+                alt="Zaman Kaybı"
+                class="w-16 h-16 icon-cafe-primary"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-cafe-primary mb-3">
+              Zaman Kaybı
+            </h3>
+            <p class="text-gray-600">
+              Kart bastırmak, damga aramak,<br />
+              kayıp kartları yönetmek... Tüm bunlar için
+              harcadığınız&nbsp;zamanla, kahve yapabilirdiniz.
+            </p>
           </div>
         </div>
       </div>
@@ -1068,7 +1090,7 @@
     </section>
 
     <!-- ====== GAMIFICATION SECTION ====== -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-surface">
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-cream-primary/50">
       <div class="max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <!-- Left: Copy -->
@@ -1137,37 +1159,144 @@
             </div>
           </div>
 
-          <!-- Right: Leaderboard Screenshot -->
-          <div>
-            <!--
-                    ========================================
-                    ASSET #7: LEADERBOARD SCREENSHOT
-                    ========================================
-                    Öneriler:
-                    - Çalışan skor tablosu ekran görüntüsü
-                    - Veya kafe sıralaması ekranı
-                    - Gamification elementlerini vurgulayan tasarım
+          <!-- Right: Leaderboard Component -->
+          <div class="bg-white/50 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
+            <h3 class="font-lora text-xl font-semibold text-cafe-primary mb-4">
+              En Aktif Çalışanlar (Bu Ay)
+            </h3>
+            <div class="bg-white/70 rounded-xl overflow-hidden shadow-sm">
+              <!-- Employee 1 - Gold -->
+              <div class="flex items-center p-4">
+                <div
+                  class="w-8 h-8 rounded-full flex items-center justify-center mr-3 bg-[#FFD700] shadow-sm"
+                >
+                  <span class="font-lora text-sm font-bold text-cafe-primary"
+                    >1</span
+                  >
+                </div>
+                <div
+                  class="w-11 h-11 rounded-full bg-gradient-to-br from-cafe-secondary to-cafe-primary flex items-center justify-center mr-3 text-white font-semibold"
+                >
+                  AY
+                </div>
+                <div class="flex-1">
+                  <p class="font-semibold text-cafe-primary">Ayşe Yılmaz</p>
+                </div>
+                <div class="text-right">
+                  <p class="font-lora text-2xl font-bold text-cafe-primary">
+                    127
+                  </p>
+                  <p class="text-xs text-gray-500">kahve</p>
+                </div>
+              </div>
 
-                    Boyut: 4:3 veya 16:9
-                    Format: PNG/WebP
-                    ========================================
-                    -->
-            <div
-              class="asset-placeholder asset-placeholder-light aspect-[4/3] rounded-2xl"
-            >
-              <svg
-                class="w-16 h-16 mb-3 opacity-30"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                />
-              </svg>
-              <span class="font-bold text-lg">ASSET #7: Liderlik Tablosu</span>
-              <span class="mt-2 max-w-xs opacity-75"
-                >Çalışan skorları veya kafe sıralaması ekranı</span
-              >
+              <div class="h-px bg-gray-100 mx-4"></div>
+
+              <!-- Employee 2 - Silver -->
+              <div class="flex items-center p-4">
+                <div
+                  class="w-8 h-8 rounded-full flex items-center justify-center mr-3 bg-[#C0C0C0] shadow-sm"
+                >
+                  <span class="font-lora text-sm font-bold text-cafe-primary"
+                    >2</span
+                  >
+                </div>
+                <div
+                  class="w-11 h-11 rounded-full bg-gradient-to-br from-cafe-secondary to-cafe-primary flex items-center justify-center mr-3 text-white font-semibold"
+                >
+                  MK
+                </div>
+                <div class="flex-1">
+                  <p class="font-semibold text-cafe-primary">Mehmet Kaya</p>
+                </div>
+                <div class="text-right">
+                  <p class="font-lora text-2xl font-bold text-cafe-primary">
+                    98
+                  </p>
+                  <p class="text-xs text-gray-500">kahve</p>
+                </div>
+              </div>
+
+              <div class="h-px bg-gray-100 mx-4"></div>
+
+              <!-- Employee 3 - Bronze -->
+              <div class="flex items-center p-4">
+                <div
+                  class="w-8 h-8 rounded-full flex items-center justify-center mr-3 bg-[#CD7F32] shadow-sm"
+                >
+                  <span class="font-lora text-sm font-bold text-cafe-primary"
+                    >3</span
+                  >
+                </div>
+                <div
+                  class="w-11 h-11 rounded-full bg-gradient-to-br from-cafe-secondary to-cafe-primary flex items-center justify-center mr-3 text-white font-semibold"
+                >
+                  EÖ
+                </div>
+                <div class="flex-1">
+                  <p class="font-semibold text-cafe-primary">Elif Özdemir</p>
+                </div>
+                <div class="text-right">
+                  <p class="font-lora text-2xl font-bold text-cafe-primary">
+                    84
+                  </p>
+                  <p class="text-xs text-gray-500">kahve</p>
+                </div>
+              </div>
+
+              <div class="h-px bg-gray-100 mx-4"></div>
+
+              <!-- Employee 4 -->
+              <div class="flex items-center p-4">
+                <div
+                  class="w-8 h-8 rounded-full flex items-center justify-center mr-3 bg-gray-200"
+                >
+                  <span class="font-lora text-sm font-bold text-gray-600"
+                    >4</span
+                  >
+                </div>
+                <div
+                  class="w-11 h-11 rounded-full bg-gradient-to-br from-cafe-secondary to-cafe-primary flex items-center justify-center mr-3 text-white font-semibold"
+                >
+                  CD
+                </div>
+                <div class="flex-1">
+                  <p class="font-semibold text-cafe-primary">Can Demir</p>
+                </div>
+                <div class="text-right">
+                  <p class="font-lora text-2xl font-bold text-cafe-primary">
+                    71
+                  </p>
+                  <p class="text-xs text-gray-500">kahve</p>
+                </div>
+              </div>
+
+              <div class="h-px bg-gray-100 mx-4"></div>
+
+              <!-- Employee 5 -->
+              <div class="flex items-center p-4">
+                <div
+                  class="w-8 h-8 rounded-full flex items-center justify-center mr-3 bg-gray-200"
+                >
+                  <span class="font-lora text-sm font-bold text-gray-600"
+                    >5</span
+                  >
+                </div>
+                <div
+                  class="w-11 h-11 rounded-full bg-gradient-to-br from-cafe-secondary to-cafe-primary flex items-center justify-center mr-3 text-white font-semibold"
+                >
+                  ZA
+                </div>
+                <div class="flex-1">
+                  <p class="font-semibold text-cafe-primary">Zeynep Arslan</p>
+                </div>
+                <div class="text-right">
+                  <p class="font-lora text-2xl font-bold text-cafe-primary">
+                    63
+                  </p>
+                  <p class="text-xs text-gray-500">kahve</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1175,7 +1304,7 @@
     </section>
 
     <!-- ====== CUSTOMER FLOW (Brief) ====== -->
-    <section class="gradient-section py-20 px-4 sm:px-6 lg:px-8">
+    <section class="gradient-section-customer py-20 px-4 sm:px-6 lg:px-8">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="text-3xl sm:text-4xl font-bold text-cream-primary mb-4">
@@ -1227,7 +1356,7 @@
               Kahveni Al
             </h3>
             <p class="text-cream-primary/70 text-sm">
-              Her kahve sayılır. İlerleme çubuğu dolar.
+              Her alışveriş sayılır. İlerleme çubuğu dolar.
             </p>
           </div>
 
@@ -1605,115 +1734,6 @@
       </div>
     </section>
 
-    <!-- ====== CTA SECTION ====== -->
-    <section id="baslat" class="py-20 px-4 sm:px-6 lg:px-8 bg-surface">
-      <div class="max-w-4xl mx-auto text-center">
-        <!-- Urgency Badge -->
-        <div
-          class="inline-flex items-center gap-2 bg-red-50 border border-red-200 rounded-full px-4 py-2 mb-6"
-        >
-          <span
-            class="urgency-badge text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide"
-            >Fırsat</span
-          >
-          <span class="text-red-700 text-sm font-medium"
-            >Sınırlı kontenjan, fırsatı kaçırmayın</span
-          >
-        </div>
-
-        <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cafe-primary mb-6"
-          style="line-height: 1.0785"
-        >
-          İlk 100 Kafe İçin<br />
-          <span class="text-cafe-secondary">14 Gün Ücretsiz</span>
-        </h2>
-
-        <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
-          Beğenmezseniz, hiçbir şey ödemezsiniz.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <a
-            href="#"
-            class="btn-dark px-8 py-4 rounded-full text-lg inline-flex items-center justify-center gap-3"
-          >
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
-              />
-            </svg>
-            App Store'dan İndir
-          </a>
-          <a
-            href="#"
-            class="btn-dark px-8 py-4 rounded-full text-lg inline-flex items-center justify-center gap-3"
-          >
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z"
-              />
-            </svg>
-            Google Play'den İndir
-          </a>
-        </div>
-
-        <!-- Trust badges -->
-        <div
-          class="flex flex-wrap items-center justify-center gap-6 text-gray-500"
-        >
-          <div class="flex items-center gap-2">
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-              />
-            </svg>
-            <span class="text-sm">Güvenli Altyapı</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
-              />
-            </svg>
-            <span class="text-sm">7/24 Destek</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <span class="text-sm">5 Dakikada Kurulum</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ====== FAQ SECTION ====== -->
     <section id="sss" class="gradient-section py-20 px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto">
@@ -1787,6 +1807,40 @@
                 Kazanılan kuponlar 30 gün boyunca geçerlidir. Müşteriler
                 kuponlarını uygulama üzerinden takip edebilir ve son kullanma
                 tarihini görebilir.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2.5 - Daily Limit -->
+          <div class="card-dark rounded-xl overflow-hidden">
+            <button
+              @click="openFaq = openFaq === 2.5 ? null : 2.5"
+              class="w-full px-6 py-4 text-left flex justify-between items-center"
+            >
+              <span class="font-semibold text-cream-primary"
+                >Aynı anda 5 kahve alırsam 5 ilerleme mi kazanırım?</span
+              >
+              <svg
+                class="w-5 h-5 text-cream-primary/50 transition-transform"
+                :class="openFaq === 2.5 && 'rotate-180'"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div x-show="openFaq === 2.5" x-collapse class="px-6 pb-4">
+              <p class="text-cream-primary/70">
+                Hayır, her müşteri günde yalnızca 1 ilerleme kazanabilir. Bu
+                sistem hem suistimali önler hem de müşterilerinizin düzenli
+                olarak geri gelmesini teşvik eder. Sadık müşteri = sık gelen
+                müşteri.
               </p>
             </div>
           </div>
@@ -1963,6 +2017,115 @@
       </div>
     </section>
 
+    <!-- ====== CTA SECTION ====== -->
+    <section id="baslat" class="py-20 px-4 sm:px-6 lg:px-8 bg-surface">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Urgency Badge -->
+        <div
+          class="inline-flex items-center gap-2 bg-red-50 border border-red-200 rounded-full px-4 py-2 mb-6"
+        >
+          <span
+            class="urgency-badge text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide"
+            >Fırsat</span
+          >
+          <span class="text-red-700 text-sm font-medium"
+            >Sınırlı kontenjan, fırsatı kaçırmayın</span
+          >
+        </div>
+
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cafe-primary mb-6"
+          style="line-height: 1.0785"
+        >
+          İlk 100 Kafe İçin<br />
+          <span class="text-cafe-secondary">14 Gün Ücretsiz</span>
+        </h2>
+
+        <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
+          Beğenmezseniz, hiçbir şey ödemezsiniz.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a
+            href="#"
+            class="btn-dark px-8 py-4 rounded-full text-lg inline-flex items-center justify-center gap-3"
+          >
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+              />
+            </svg>
+            App Store'dan İndir
+          </a>
+          <a
+            href="#"
+            class="btn-dark px-8 py-4 rounded-full text-lg inline-flex items-center justify-center gap-3"
+          >
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z"
+              />
+            </svg>
+            Google Play'den İndir
+          </a>
+        </div>
+
+        <!-- Trust badges -->
+        <div
+          class="flex flex-wrap items-center justify-center gap-6 text-gray-500"
+        >
+          <div class="flex items-center gap-2">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              />
+            </svg>
+            <span class="text-sm">Güvenli Altyapı</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+            <span class="text-sm">7/24 Destek</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span class="text-sm">5 Dakikada Kurulum</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ====== FOOTER ====== -->
     <footer
       class="bg-cafe-darker py-12 px-4 sm:px-6 lg:px-8 border-t border-cafe-secondary/10"
@@ -1982,7 +2145,7 @@
             </p>
             <div class="flex gap-3">
               <a
-                href="#"
+                href="https://www.instagram.com/kafin.app/"
                 class="w-10 h-10 bg-cafe-primary/40 rounded-full flex items-center justify-center text-cream-primary/60 hover:text-cream-primary hover:bg-cafe-primary/60 transition"
               >
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -1992,14 +2155,9 @@
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://x.com/kafinapp"
                 class="w-10 h-10 bg-cafe-primary/40 rounded-full flex items-center justify-center text-cream-primary/60 hover:text-cream-primary hover:bg-cafe-primary/60 transition"
               >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"
-                  />
-                </svg>
               </a>
             </div>
           </div>
@@ -2020,6 +2178,13 @@
                   href="#nasil-calisir"
                   class="text-cream-primary/60 hover:text-cream-primary transition"
                   >Nasıl Çalışır</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#fiyatlar"
+                  class="text-cream-primary/60 hover:text-cream-primary transition"
+                  >Fiyatlar</a
                 >
               </li>
               <li>
@@ -2076,8 +2241,8 @@
         <div
           class="border-t border-cafe-secondary/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4"
         >
-          <p class="text-cream-primary/40 text-sm">
-            &copy; 2025 Kafin. Tüm hakları saklıdır.
+          <p class="font-lora text-cream-primary/40 text-sm">
+            &copy; 2026 Kafin. Tüm hakları saklıdır.
           </p>
           <div class="flex gap-6 text-sm">
             <a
