@@ -319,6 +319,11 @@
               >Fiyatlar</a
             >
             <a
+              href="#musteri"
+              class="text-cream-primary/80 hover:text-cream-primary transition text-sm font-medium"
+              >Müşteri</a
+            >
+            <a
               href="#sss"
               class="text-cream-primary/80 hover:text-cream-primary transition text-sm font-medium"
               >SSS</a
@@ -382,6 +387,12 @@
             @click="mobileOpen = false"
             class="block py-2 text-cream-primary/80 hover:text-cream-primary"
             >Fiyatlar</a
+          >
+          <a
+            href="#musteri"
+            @click="mobileOpen = false"
+            class="block py-2 text-cream-primary/80 hover:text-cream-primary"
+            >Müşteri</a
           >
           <a
             href="#sss"
@@ -1102,7 +1113,7 @@
 
             <p class="text-lg text-gray-600 mb-8">
               Kafin, kahve takibini bir oyuna dönüştürüyor. Çalışanlarınız
-              yarışsın, kafeniniz yükselsin.
+              yarışsın, kafeniz yükselsin.
             </p>
 
             <div class="space-y-6">
@@ -1304,7 +1315,10 @@
     </section>
 
     <!-- ====== CUSTOMER FLOW (Brief) ====== -->
-    <section class="gradient-section-customer py-20 px-4 sm:px-6 lg:px-8">
+    <section
+      class="gradient-section-customer py-20 px-4 sm:px-6 lg:px-8"
+      id="musteri"
+    >
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="text-3xl sm:text-4xl font-bold text-cream-primary mb-4">
@@ -2159,7 +2173,9 @@
                 class="w-10 h-10 bg-cafe-primary/40 rounded-full flex items-center justify-center text-cream-primary/60 hover:text-cream-primary hover:bg-cafe-primary/60 transition"
               >
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  />
                 </svg>
               </a>
             </div>
@@ -2188,6 +2204,13 @@
                   href="#fiyatlar"
                   class="text-cream-primary/60 hover:text-cream-primary transition"
                   >Fiyatlar</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#musteri"
+                  class="text-cream-primary/60 hover:text-cream-primary transition"
+                  >Müşteri</a
                 >
               </li>
               <li>
