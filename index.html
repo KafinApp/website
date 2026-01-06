@@ -94,6 +94,7 @@
                 light: "#FFF1C0",
               },
               surface: "#FCFCFC",
+              lightBrown: "#888279"
             },
             fontFamily: {
               display: ["Lora", "serif"],
@@ -304,24 +305,24 @@
           <!-- Desktop Menu -->
           <div class="hidden md:flex items-center gap-8">
             <a
+              href="#performans"
+              class="text-cream-primary/80 hover:text-cream-primary transition text-sm font-medium"
+              >Performans</a
+            >
+            <a
               href="#ozellikler"
               class="text-cream-primary/80 hover:text-cream-primary transition text-sm font-medium"
               >Özellikler</a
             >
             <a
-              href="#nasil-calisir"
-              class="text-cream-primary/80 hover:text-cream-primary transition text-sm font-medium"
-              >Nasıl Çalışır</a
+            href="#musteri"
+            class="text-cream-primary/80 hover:text-cream-primary transition text-sm font-medium"
+            >Müşteri</a
             >
             <a
               href="#fiyatlar"
               class="text-cream-primary/80 hover:text-cream-primary transition text-sm font-medium"
               >Fiyatlar</a
-            >
-            <a
-              href="#musteri"
-              class="text-cream-primary/80 hover:text-cream-primary transition text-sm font-medium"
-              >Müşteri</a
             >
             <a
               href="#sss"
@@ -371,28 +372,28 @@
           class="md:hidden pb-4 border-t border-cafe-secondary/10 mt-2 pt-4"
         >
           <a
+            href="#performans"
+            @click="mobileOpen = false"
+            class="block py-2 text-cream-primary/80 hover:text-cream-primary"
+            >Performans</a
+          >
+          <a
             href="#ozellikler"
             @click="mobileOpen = false"
             class="block py-2 text-cream-primary/80 hover:text-cream-primary"
             >Özellikler</a
           >
           <a
-            href="#nasil-calisir"
-            @click="mobileOpen = false"
-            class="block py-2 text-cream-primary/80 hover:text-cream-primary"
-            >Nasıl Çalışır</a
+          href="#musteri"
+          @click="mobileOpen = false"
+          class="block py-2 text-cream-primary/80 hover:text-cream-primary"
+          >Müşteri</a
           >
           <a
             href="#fiyatlar"
             @click="mobileOpen = false"
             class="block py-2 text-cream-primary/80 hover:text-cream-primary"
             >Fiyatlar</a
-          >
-          <a
-            href="#musteri"
-            @click="mobileOpen = false"
-            class="block py-2 text-cream-primary/80 hover:text-cream-primary"
-            >Müşteri</a
           >
           <a
             href="#sss"
@@ -455,10 +456,10 @@
                 Ücretsiz Dene
               </a>
               <a
-                href="#nasil-calisir"
+                href="#performans"
                 class="btn-secondary px-8 py-2 flex items-center justify-center rounded-full text-lg"
               >
-                Nasıl Çalışır?
+                Performans
               </a>
             </div>
 
@@ -547,7 +548,7 @@
     </section>
 
     <!-- ====== SPEED SECTION ====== -->
-    <section id="nasil-calisir" class="py-20 px-4 sm:px-6 lg:px-8 bg-surface">
+    <section id="performans" class="py-20 px-4 sm:px-6 lg:px-8 bg-surface">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
           <h2
@@ -566,7 +567,7 @@
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="font-semibold text-cafe-primary"
-                  >Müşteri Kaydı</span
+                  >İndirme & Müşteri Kaydı</span
                 >
                 <span class="text-cafe-secondary font-bold">30 saniye</span>
               </div>
@@ -583,7 +584,7 @@
                 <span class="font-semibold text-cafe-primary"
                   >QR Oluşturma</span
                 >
-                <span class="text-cafe-secondary font-bold">2 tıklama</span>
+                <span class="text-cafe-secondary font-bold">1 tıklama</span>
               </div>
               <div class="speed-bar">
                 <div class="speed-bar-fill" style="width: 8%"></div>
@@ -847,11 +848,6 @@
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Problem 1 -->
           <div class="card-light rounded-2xl p-8 text-center">
-            <!--
-                    ASSET #2: ICON - Veri Yok / Kör
-                    Öneri: Kapalı göz, soru işareti, boş grafik ikonu
-                    Boyut: 64x64 veya 80x80 SVG/PNG
-                    -->
             <div
               class="w-20 h-20 mx-auto mb-6 flex items-center justify-center"
             >
@@ -871,11 +867,6 @@
 
           <!-- Problem 2 -->
           <div class="card-light rounded-2xl p-8 text-center">
-            <!--
-                    ASSET #3: ICON - Suistimal / Hile
-                    Öneri: Maske, kırık kalkan, uyarı işareti
-                    Boyut: 64x64 veya 80x80 SVG/PNG
-                    -->
             <div
               class="w-20 h-20 mx-auto mb-6 flex items-center justify-center"
             >
@@ -896,11 +887,6 @@
 
           <!-- Problem 3 -->
           <div class="card-light rounded-2xl p-8 text-center">
-            <!--
-                    ASSET #4: ICON - Zaman Kaybı
-                    Öneri: Kum saati, dönen saat, yorgun yüz
-                    Boyut: 64x64 veya 80x80 SVG/PNG
-                    -->
             <div
               class="w-20 h-20 mx-auto mb-6 flex items-center justify-center"
             >
@@ -2208,16 +2194,16 @@
             <ul class="space-y-2 text-sm">
               <li>
                 <a
-                  href="#ozellikler"
+                  href="#performans"
                   class="text-cream-primary/60 hover:text-cream-primary transition"
-                  >Özellikler</a
+                  >Performans</a
                 >
               </li>
               <li>
                 <a
-                  href="#nasil-calisir"
+                  href="#ozellikler"
                   class="text-cream-primary/60 hover:text-cream-primary transition"
-                  >Nasıl Çalışır</a
+                  >Özellikler</a
                 >
               </li>
               <li>
