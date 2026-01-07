@@ -428,7 +428,7 @@
                 >Sınırlı</span
               >
               <span class="text-cream-primary/90 text-sm"
-                >İlk 100 kafe için 14 gün ücretsiz</span
+                >İlk <span class="font-display">100</span> kafe için <span class="font-display">14</span> gün ücretsiz</span
               >
             </div>
 
@@ -466,17 +466,17 @@
             <!-- Stats -->
             <div class="mt-12 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
               <div class="text-center lg:text-left">
-                <div class="stat-number gradient-text">50+</div>
+                <div class="stat-number gradient-text font-display">50+</div>
                 <div class="text-cream-primary/60 text-sm mt-1">Aktif Kafe</div>
               </div>
               <div class="text-center lg:text-left">
-                <div class="stat-number gradient-text">1K+</div>
+                <div class="stat-number gradient-text font-display">1K+</div>
                 <div class="text-cream-primary/60 text-sm mt-1">
                   Mutlu Müşteri
                 </div>
               </div>
               <div class="text-center lg:text-left">
-                <div class="stat-number gradient-text">2K+</div>
+                <div class="stat-number gradient-text font-display">2K+</div>
                 <div class="text-cream-primary/60 text-sm mt-1">
                   Kahve İşlemi
                 </div>
@@ -529,7 +529,7 @@
                 </svg>
               </div>
               <div>
-                <div class="text-cream-primary font-bold text-lg">+127%</div>
+                <div class="text-cream-primary font-bold text-lg font-display">+127%</div>
                 <div class="text-cream-primary/60 text-xs">
                   Tekrar ziyaret oranı
                 </div>
@@ -569,13 +569,13 @@
                 <span class="font-semibold text-cafe-primary"
                   >İndirme & Müşteri Kaydı</span
                 >
-                <span class="text-cafe-secondary font-bold">30 saniye</span>
+                <span class="text-cafe-secondary font-bold"><span class="font-display">30</span> saniye</span>
               </div>
               <div class="speed-bar">
                 <div class="speed-bar-fill" style="width: 12%"></div>
               </div>
               <p class="text-sm text-gray-500 mt-2">
-                Diğer uygulamalar: 3-5 dakika
+                Diğer uygulamalar: <span class="font-display">3-5</span> dakika
               </p>
             </div>
 
@@ -584,7 +584,7 @@
                 <span class="font-semibold text-cafe-primary"
                   >QR Oluşturma</span
                 >
-                <span class="text-cafe-secondary font-bold">1 tıklama</span>
+                <span class="text-cafe-secondary font-bold"><span class="font-display">1</span> tıklama</span>
               </div>
               <div class="speed-bar">
                 <div class="speed-bar-fill" style="width: 8%"></div>
@@ -597,7 +597,7 @@
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="font-semibold text-cafe-primary">QR Tarama</span>
-                <span class="text-cafe-secondary font-bold">1 saniye</span>
+                <span class="text-cafe-secondary font-bold"><span class="font-display">1</span> saniye</span>
               </div>
               <div class="speed-bar">
                 <div class="speed-bar-fill" style="width: 4%"></div>
@@ -1026,8 +1026,8 @@
               Esnek Kampanya
             </h3>
             <p class="text-cream-primary/70 text-sm">
-              3 kahvede bir mi bedava, 15'te mi? Siz belirleyin. Her yılbaşında
-              (1-10 Ocak) güncelleme şansınız var.
+              <span class="font-display">3</span> kahvede bir mi bedava, <span class="font-display">15</span>'te mi? Siz belirleyin. Her yılbaşında
+              (<span class="font-display">1-10</span> Ocak) güncelleme şansınız var.
             </p>
           </div>
 
@@ -1414,7 +1414,7 @@
     <!-- ====== PRICING SECTION ====== -->
     <section id="fiyatlar" class="py-20 px-4 sm:px-6 lg:px-8 bg-surface">
       <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-16">
+        <div class="text-center mb-8">
           <h2
             class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cafe-primary mb-4"
           >
@@ -1425,9 +1425,42 @@
           </p>
         </div>
 
+        <!-- Free Trial Banner -->
+        <div class="max-w-md mx-auto mb-8">
+          <div class="bg-gradient-to-r from-cafe-secondary to-cafe-primary rounded-full py-3 px-6 flex items-center justify-center gap-2 shadow-lg">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-white font-semibold text-lg"><span class="font-display">14</span> gün ücretsiz deneyin!</span>
+          </div>
+        </div>
+
+        <!-- Billing Toggle -->
+        <div class="flex items-center justify-center gap-4 mb-12">
+          <span id="monthly-label" class="text-lg font-medium text-cafe-primary">Aylık</span>
+          <button
+            id="billing-toggle"
+            class="relative w-20 h-10 bg-gray-200 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cafe-secondary focus:ring-offset-2"
+            onclick="toggleBilling()"
+            aria-pressed="false"
+            aria-label="Yıllık faturalandırmaya geç"
+          >
+            <span
+              id="toggle-dot"
+              class="absolute left-1 top-1 w-8 h-8 bg-white rounded-full shadow-md transform transition-transform duration-300 flex items-center justify-center"
+            >
+              <span id="toggle-icon" class="text-xs font-bold text-gray-400">Ay</span>
+            </span>
+          </button>
+          <div class="flex items-center gap-2">
+            <span id="yearly-label" class="text-lg font-medium text-gray-400">Yıllık</span>
+            <span id="savings-badge" class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full opacity-50 transition-opacity duration-300"><span class="font-display">2</span> AY BEDAVA</span>
+          </div>
+        </div>
+
         <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <!-- Basic Plan -->
-          <div class="card-light rounded-2xl p-8 border-2 border-gray-200">
+          <div class="card-light rounded-2xl p-8 border-2 border-gray-200 transition-all duration-300">
             <div class="text-center mb-8">
               <h3 class="text-2xl font-bold text-cafe-primary mb-2">
                 Başlangıç
@@ -1437,14 +1470,11 @@
 
             <div class="text-center mb-8">
               <div class="flex items-end justify-center gap-1">
-                <span class="text-5xl font-bold text-cafe-primary">349</span>
-                <span class="text-xl text-gray-500 mb-2">TL/ay</span>
+                <span id="starter-price" class="text-5xl font-bold text-cafe-primary transition-all duration-300 font-display">349</span>
+                <span id="starter-period" class="text-xl text-gray-500 mb-2">TL/ay</span>
               </div>
-              <p class="text-sm text-gray-500 mt-2">
-                veya 3.499 TL/yıl
-                <span class="text-cafe-secondary font-medium"
-                  >(2 ay bedava)</span
-                >
+              <p id="starter-yearly-note" class="text-sm text-cafe-secondary font-medium mt-2 h-6">
+                <!-- Populated by JS -->
               </p>
             </div>
 
@@ -1567,13 +1597,13 @@
               href="#baslat"
               class="block w-full py-3 px-6 text-center rounded-full border-2 border-cafe-primary text-cafe-primary font-semibold hover:bg-cafe-primary hover:text-white transition"
             >
-              Başlangıç'ı Seç
+              Ücretsiz Dene
             </a>
           </div>
 
           <!-- Premium Plan -->
           <div
-            class="card-light rounded-2xl p-8 border-2 border-cafe-secondary relative overflow-hidden"
+            class="card-light rounded-2xl p-8 border-2 border-cafe-secondary relative overflow-hidden transition-all duration-300"
           >
             <!-- Popular Badge -->
             <div class="absolute top-4 right-4">
@@ -1592,14 +1622,11 @@
 
             <div class="text-center mb-8">
               <div class="flex items-end justify-center gap-1">
-                <span class="text-5xl font-bold text-cafe-primary">899</span>
-                <span class="text-xl text-gray-500 mb-2">TL/ay</span>
+                <span id="pro-price" class="text-5xl font-bold text-cafe-primary transition-all duration-300 font-display">899</span>
+                <span id="pro-period" class="text-xl text-gray-500 mb-2">TL/ay</span>
               </div>
-              <p class="text-sm text-gray-500 mt-2">
-                veya 8.999 TL/yıl
-                <span class="text-cafe-secondary font-medium"
-                  >(2 ay bedava)</span
-                >
+              <p id="pro-yearly-note" class="text-sm text-cafe-secondary font-medium mt-2 h-6">
+                <!-- Populated by JS -->
               </p>
             </div>
 
@@ -1730,30 +1757,123 @@
               href="#baslat"
               class="block w-full py-3 px-6 text-center rounded-full bg-cafe-primary text-white font-semibold hover:bg-cafe-secondary/90 transition"
             >
-              Profesyonel'i Seç
+              Ücretsiz Dene
             </a>
           </div>
         </div>
 
-        <!-- Money back guarantee -->
-        <p class="text-center mt-10 text-gray-500 text-sm">
-          <svg
-            class="w-5 h-5 inline-block mr-1 -mt-0.5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-            />
-          </svg>
-          14 gün ücretsiz deneyin. Beğenmezseniz ödeme yok.
-        </p>
+        <!-- Trust indicators -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10 text-gray-500 text-sm">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            <span>Kredi kartı gerekmez</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>İstediğiniz zaman iptal edin</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            <span>Anında kurulum</span>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- Pricing Toggle Script -->
+    <script>
+      let isYearly = false;
+
+      const prices = {
+        starter: { monthly: 349, yearly: 3499, yearlySavings: 689 },
+        pro: { monthly: 899, yearly: 8999, yearlySavings: 1789 }
+      };
+
+      function toggleBilling() {
+        isYearly = !isYearly;
+
+        const toggle = document.getElementById('billing-toggle');
+        const toggleDot = document.getElementById('toggle-dot');
+        const toggleIcon = document.getElementById('toggle-icon');
+        const monthlyLabel = document.getElementById('monthly-label');
+        const yearlyLabel = document.getElementById('yearly-label');
+        const savingsBadge = document.getElementById('savings-badge');
+
+        // Update toggle appearance
+        if (isYearly) {
+          toggle.classList.remove('bg-gray-200');
+          toggle.classList.add('bg-cafe-secondary');
+          toggleDot.classList.add('translate-x-10');
+          toggleIcon.textContent = 'Yıl';
+          toggleIcon.classList.remove('text-gray-400');
+          toggleIcon.classList.add('text-cafe-secondary');
+          monthlyLabel.classList.remove('text-cafe-primary');
+          monthlyLabel.classList.add('text-gray-400');
+          yearlyLabel.classList.remove('text-gray-400');
+          yearlyLabel.classList.add('text-cafe-primary');
+          savingsBadge.classList.remove('opacity-50');
+          savingsBadge.classList.add('opacity-100');
+        } else {
+          toggle.classList.remove('bg-cafe-secondary');
+          toggle.classList.add('bg-gray-200');
+          toggleDot.classList.remove('translate-x-10');
+          toggleIcon.textContent = 'Ay';
+          toggleIcon.classList.remove('text-cafe-secondary');
+          toggleIcon.classList.add('text-gray-400');
+          monthlyLabel.classList.remove('text-gray-400');
+          monthlyLabel.classList.add('text-cafe-primary');
+          yearlyLabel.classList.remove('text-cafe-primary');
+          yearlyLabel.classList.add('text-gray-400');
+          savingsBadge.classList.remove('opacity-100');
+          savingsBadge.classList.add('opacity-50');
+        }
+
+        // Update prices with animation
+        updatePrices();
+      }
+
+      function updatePrices() {
+        const starterPrice = document.getElementById('starter-price');
+        const starterPeriod = document.getElementById('starter-period');
+        const starterNote = document.getElementById('starter-yearly-note');
+        const proPrice = document.getElementById('pro-price');
+        const proPeriod = document.getElementById('pro-period');
+        const proNote = document.getElementById('pro-yearly-note');
+
+        // Add scale animation
+        starterPrice.style.transform = 'scale(0.8)';
+        proPrice.style.transform = 'scale(0.8)';
+
+        setTimeout(() => {
+          if (isYearly) {
+            starterPrice.textContent = prices.starter.yearly.toLocaleString('tr-TR');
+            starterPeriod.textContent = 'TL/yıl';
+            starterNote.innerHTML = `<span class="text-green-600">₺${prices.starter.yearlySavings} tasarruf!</span>`;
+
+            proPrice.textContent = prices.pro.yearly.toLocaleString('tr-TR');
+            proPeriod.textContent = 'TL/yıl';
+            proNote.innerHTML = `<span class="text-green-600">₺${prices.pro.yearlySavings} tasarruf!</span>`;
+          } else {
+            starterPrice.textContent = prices.starter.monthly;
+            starterPeriod.textContent = 'TL/ay';
+            starterNote.innerHTML = '';
+
+            proPrice.textContent = prices.pro.monthly;
+            proPeriod.textContent = 'TL/ay';
+            proNote.innerHTML = '';
+          }
+
+          starterPrice.style.transform = 'scale(1)';
+          proPrice.style.transform = 'scale(1)';
+        }, 150);
+      }
+    </script>
 
     <!-- ====== FAQ SECTION ====== -->
     <section id="sss" class="gradient-section py-20 px-4 sm:px-6 lg:px-8">
@@ -2024,11 +2144,11 @@
             </button>
             <div x-show="openFaq === 7" x-collapse class="px-6 pb-4">
               <p class="text-cream-primary/70">
-                <strong>Başlangıç (349 TL/ay):</strong> QR ile kahve takibi,
+                <strong>Başlangıç (<span class="font-display">349</span> TL/ay):</strong> QR ile kahve takibi,
                 otomatik kupon sistemi, müşteri listesi ve son aktiviteler. Tek
                 başınıza çalışan küçük kafeler için ideal.<br /><br />
-                <strong>Profesyonel (899 TL/ay):</strong> Tüm Başlangıç
-                özellikleri + 7'ye kadar çalışan yönetimi, detaylı
+                <strong>Profesyonel (<span class="font-display">899</span> TL/ay):</strong> Tüm Başlangıç
+                özellikleri + <span class="font-display">7</span>'ye kadar çalışan yönetimi, detaylı
                 istatistikler, liderlik tablosu ve müşterilere bildirim
                 gönderme. Ekibiyle birlikte büyümek isteyen kafeler için.
               </p>
