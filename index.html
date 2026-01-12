@@ -1164,7 +1164,7 @@
                     Yetki Kontrolü
                   </h4>
                   <p class="text-gray-600">
-                    Çalışanlar sadece QR tararlar. Kampanya ayarları, müşteri verileri ve finansal
+                    Çalışanlar sadece QR tararlar. Kampanya ayarları, müşteri verileri ve özel
                     bilgiler yalnızca kafe sahibine açıktır.
                   </p>
                 </div>
@@ -1178,11 +1178,11 @@
                 <p class="text-sm text-gray-500">Verimlilik artışı</p>
               </div>
               <div class="text-center">
-                <p class="font-display text-3xl font-bold text-cafe-primary">5dk</p>
+                <p class="font-display text-3xl font-bold text-cafe-primary">2dk</p>
                 <p class="text-sm text-gray-500">Kurulum süresi</p>
               </div>
               <div class="text-center">
-                <p class="font-display text-3xl font-bold text-cafe-primary">10+</p>
+                <p class="font-display text-3xl font-bold text-cafe-primary">7'ye kadar</p>
                 <p class="text-sm text-gray-500">Çalışan desteği</p>
               </div>
             </div>
@@ -1903,11 +1903,11 @@
           if (isYearly) {
             starterPrice.textContent = prices.starter.yearly.toLocaleString('tr-TR');
             starterPeriod.textContent = 'TL/yıl';
-            starterNote.innerHTML = `<span class="text-green-600">₺${prices.starter.yearlySavings} tasarruf!</span>`;
+            starterNote.innerHTML = `<span class="text-green-600 font-display">₺${prices.starter.yearlySavings} tasarruf!</span>`;
 
             proPrice.textContent = prices.pro.yearly.toLocaleString('tr-TR');
             proPeriod.textContent = 'TL/yıl';
-            proNote.innerHTML = `<span class="text-green-600">₺${prices.pro.yearlySavings} tasarruf!</span>`;
+            proNote.innerHTML = `<span class="text-green-600 font-display">₺${prices.pro.yearlySavings} tasarruf!</span>`;
           } else {
             starterPrice.textContent = prices.starter.monthly;
             starterPeriod.textContent = 'TL/ay';
@@ -2373,6 +2373,13 @@
                   href="#ozellikler"
                   class="text-cream-primary/60 hover:text-cream-primary transition"
                   >Özellikler</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#calisanlar"
+                  class="text-cream-primary/60 hover:text-cream-primary transition"
+                  >Çalışanlar</a
                 >
               </li>
               <li>
