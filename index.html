@@ -2,7 +2,7 @@
 <html lang="tr" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="theme-color" content="#0a370d" />
+    <meta name="theme-color" content="#020c03" />
     <link
       rel="icon"
       type="image/png"
@@ -34,7 +34,7 @@
       href="/assets/logo-192.png"
     />
     <meta name="msapplication-navbutton-color" content="#020c03" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#0a370d" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#020c03" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO Meta Tags -->
@@ -315,9 +315,14 @@
               >Özellikler</a
             >
             <a
-            href="#musteri"
-            class="text-cream-primary/80 hover:text-cream-primary transition text-sm font-medium"
-            >Müşteri</a
+              href="#calisanlar"
+              class="text-cream-primary/80 hover:text-cream-primary transition text-sm font-medium"
+              >Çalışanlar</a
+            >
+            <a
+              href="#musteri"
+              class="text-cream-primary/80 hover:text-cream-primary transition text-sm font-medium"
+              >Müşteri</a
             >
             <a
               href="#fiyatlar"
@@ -384,10 +389,16 @@
             >Özellikler</a
           >
           <a
-          href="#musteri"
-          @click="mobileOpen = false"
-          class="block py-2 text-cream-primary/80 hover:text-cream-primary"
-          >Müşteri</a
+            href="#calisanlar"
+            @click="mobileOpen = false"
+            class="block py-2 text-cream-primary/80 hover:text-cream-primary"
+            >Çalışanlar</a
+          >
+          <a
+            href="#musteri"
+            @click="mobileOpen = false"
+            class="block py-2 text-cream-primary/80 hover:text-cream-primary"
+            >Müşteri</a
           >
           <a
             href="#fiyatlar"
@@ -1086,214 +1097,179 @@
       </div>
     </section>
 
-    <!-- ====== GAMIFICATION SECTION ====== -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-cream-primary/50">
+    <!-- ====== EMPLOYEE MANAGEMENT SECTION ====== -->
+    <section id="calisanlar" class="py-20 px-4 sm:px-6 lg:px-8 bg-cream-primary/50">
       <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <!-- Left: Copy -->
-          <div>
-            <h2 class="text-3xl sm:text-4xl font-bold text-cafe-primary mb-6">
-              Sadece Ödül Değil,<br />
-              <span class="text-[#FFA500]">Eğlence</span>
-            </h2>
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <span class="inline-block px-4 py-1.5 bg-cafe-primary/10 text-cafe-primary text-sm font-semibold rounded-full mb-4">
+            Profesyonel Plan
+          </span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cafe-primary mb-4">
+            Ekibinizi <span class="text-[#FFA500]">Güçlendirin</span>
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Çalışanlarınızı ekleyin, performanslarını takip edin, satış rekabetleriyle motive edin.
+            Tüm ekip yönetimi tek ekranda.
+          </p>
+        </div>
 
-            <p class="text-lg text-gray-600 mb-8">
-              Kafin, kahve takibini bir oyuna dönüştürüyor. Çalışanlarınız
-              yarışsın, kafeniz yükselsin.
-            </p>
-
-            <div class="space-y-6">
+        <!-- Main Content: Two Column Layout -->
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+          <!-- Left: Features -->
+          <div class="order-2 lg:order-1">
+            <div class="space-y-8">
               <div class="flex items-start gap-4">
-                <div
-                  class="w-12 h-12 bg-cafe-primary/10 rounded-xl flex items-center justify-center flex-shrink-0"
-                >
-                  <span class="text-2xl">🏆</span>
+                <div class="w-14 h-14 bg-gradient-to-br from-[#FFA500] to-[#FF8C00] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+                  </svg>
                 </div>
                 <div>
-                  <h4 class="font-semibold text-cafe-primary mb-1">
-                    Çalışan Liderlik Tablosu
+                  <h4 class="text-xl font-bold text-cafe-primary mb-2">
+                    Kolay Çalışan Ekleme
                   </h4>
                   <p class="text-gray-600">
-                    Hangi çalışan en çok satış yaptı? Günlük, haftalık, aylık
-                    sıralama ile ekibinizi motive edin.
+                    Saniyeler içinde yeni çalışan ekleyin. Her biri kendi hesabıyla giriş yapar,
+                    QR tarayabilir. Hiçbir eğitim gerekmez.
                   </p>
                 </div>
               </div>
 
               <div class="flex items-start gap-4">
-                <div
-                  class="w-12 h-12 bg-cafe-primary/10 rounded-xl flex items-center justify-center flex-shrink-0"
-                >
-                  <span class="text-2xl">📊</span>
+                <div class="w-14 h-14 bg-gradient-to-br from-[#FFA500] to-[#FF8C00] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                  </svg>
                 </div>
                 <div>
-                  <h4 class="font-semibold text-cafe-primary mb-1">
-                    Kafe Sıralaması
+                  <h4 class="text-xl font-bold text-cafe-primary mb-2">
+                    Detaylı Performans Takibi
                   </h4>
                   <p class="text-gray-600">
-                    Türkiye genelinde kaç numarasınız? Diğer kafelerle rekabet
-                    edin, üst sıralara tırmanın.
+                    Kim kaç kahve sattı? Hangi saatlerde en aktif? Her çalışanın istatistiklerini
+                    günlük, haftalık ve aylık olarak görün.
                   </p>
                 </div>
               </div>
 
               <div class="flex items-start gap-4">
-                <div
-                  class="w-12 h-12 bg-cafe-primary/10 rounded-xl flex items-center justify-center flex-shrink-0"
-                >
-                  <span class="text-2xl">🎯</span>
+                <div class="w-14 h-14 bg-gradient-to-br from-[#FFA500] to-[#FF8C00] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                  </svg>
                 </div>
                 <div>
-                  <h4 class="font-semibold text-cafe-primary mb-1">
-                    İlerleme Takibi
+                  <h4 class="text-xl font-bold text-cafe-primary mb-2">
+                    Yetki Kontrolü
                   </h4>
                   <p class="text-gray-600">
-                    Müşteriler hedefe ne kadar yakın olduklarını görür. Bu da
-                    onları tekrar getiren şey.
+                    Çalışanlar sadece QR tararlar. Kampanya ayarları, müşteri verileri ve finansal
+                    bilgiler yalnızca kafe sahibine açıktır.
                   </p>
                 </div>
               </div>
             </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-4 mt-10 pt-10 border-t border-cafe-primary/10">
+              <div class="text-center">
+                <p class="font-display text-3xl font-bold text-cafe-primary">%40</p>
+                <p class="text-sm text-gray-500">Verimlilik artışı</p>
+              </div>
+              <div class="text-center">
+                <p class="font-display text-3xl font-bold text-cafe-primary">5dk</p>
+                <p class="text-sm text-gray-500">Kurulum süresi</p>
+              </div>
+              <div class="text-center">
+                <p class="font-display text-3xl font-bold text-cafe-primary">10+</p>
+                <p class="text-sm text-gray-500">Çalışan desteği</p>
+              </div>
+            </div>
           </div>
 
-          <!-- Right: Leaderboard Component -->
-          <div class="bg-white/50 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
-            <h3 class="font-display text-xl font-semibold text-cafe-primary mb-4">
-              En Aktif Çalışanlar (Bu Ay)
+          <!-- Right: Employee List Screenshot -->
+          <div class="order-1 lg:order-2 flex justify-center">
+            <div class="relative">
+              <div class="absolute inset-0 bg-gradient-to-r from-[#FFA500]/30 to-cafe-primary/30 rounded-3xl blur-3xl scale-110"></div>
+              <img
+                src="./assets/employees_small.png"
+                srcset="./assets/employees_small.png 450w, ./assets/employees_large.png 675w"
+                sizes="(max-width: 1024px) 450px, 675px"
+                alt="Kafin Çalışan Listesi Ekranı"
+                class="relative rounded-2xl w-[450px] lg:w-[337px] max-w-full"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Leaderboard Section -->
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <!-- Left: Leaderboard Screenshot -->
+          <div class="flex justify-center">
+            <div class="relative">
+              <div class="absolute inset-0 bg-gradient-to-r from-cafe-primary/30 to-[#FFA500]/30 rounded-3xl blur-3xl scale-110"></div>
+              <img
+                src="./assets/employee-screen_small.png"
+                srcset="./assets/employee-screen_small.png 450w, ./assets/employee-screen_large.png 675w"
+                sizes="(max-width: 1024px) 450px, 675px"
+                alt="Kafin Çalışan Sıralaması Ekranı"
+                class="relative rounded-2xl w-[450px] lg:w-[337px] max-w-full"
+              />
+            </div>
+          </div>
+
+          <!-- Right: Gamification Features -->
+          <div>
+            <h3 class="text-2xl sm:text-3xl font-bold text-cafe-primary mb-6">
+              Rekabet Motivasyon Getirir
             </h3>
-            <div class="bg-white/70 rounded-xl overflow-hidden shadow-sm">
-              <!-- Employee 1 - Gold -->
-              <div class="flex items-center p-4">
-                <div
-                  class="w-8 h-8 rounded-full flex items-center justify-center mr-3 bg-[#FFD700] shadow-sm"
-                >
-                  <span class="font-display text-sm font-bold text-cafe-primary"
-                    >1</span
-                  >
-                </div>
-                <div
-                  class="w-11 h-11 rounded-full bg-gradient-to-br from-cafe-secondary to-cafe-primary flex items-center justify-center mr-3 text-white font-semibold"
-                >
-                  AY
+            <p class="text-lg text-gray-600 mb-8">
+              Çalışanlarınız birbirleriyle yarışsın. Liderlik tablosu ile en çok satan
+              çalışanı herkes görsün. Performans artar, moral yükselir.
+            </p>
+
+            <div class="space-y-5">
+              <div class="flex items-center gap-4 bg-white/70 rounded-xl p-4 shadow-sm">
+                <div class="w-10 h-10 bg-[#FFD700] rounded-full flex items-center justify-center shadow">
+                  <span class="font-display font-bold text-cafe-primary">1</span>
                 </div>
                 <div class="flex-1">
-                  <p class="font-semibold text-cafe-primary">Ayşe Yılmaz</p>
+                  <p class="font-semibold text-cafe-primary">Altın Rozet</p>
+                  <p class="text-sm text-gray-500">Ayın en çok satan çalışanı</p>
                 </div>
-                <div class="text-right">
-                  <p class="font-display text-2xl font-bold text-cafe-primary">
-                    127
-                  </p>
-                  <p class="text-xs text-gray-500">kahve</p>
-                </div>
+                <span class="text-2xl">🏆</span>
               </div>
 
-              <div class="h-px bg-gray-100 mx-4"></div>
-
-              <!-- Employee 2 - Silver -->
-              <div class="flex items-center p-4">
-                <div
-                  class="w-8 h-8 rounded-full flex items-center justify-center mr-3 bg-[#C0C0C0] shadow-sm"
-                >
-                  <span class="font-display text-sm font-bold text-cafe-primary"
-                    >2</span
-                  >
-                </div>
-                <div
-                  class="w-11 h-11 rounded-full bg-gradient-to-br from-cafe-secondary to-cafe-primary flex items-center justify-center mr-3 text-white font-semibold"
-                >
-                  MK
+              <div class="flex items-center gap-4 bg-white/70 rounded-xl p-4 shadow-sm">
+                <div class="w-10 h-10 bg-[#C0C0C0] rounded-full flex items-center justify-center shadow">
+                  <span class="font-display font-bold text-cafe-primary">2</span>
                 </div>
                 <div class="flex-1">
-                  <p class="font-semibold text-cafe-primary">Mehmet Kaya</p>
+                  <p class="font-semibold text-cafe-primary">Gümüş Rozet</p>
+                  <p class="text-sm text-gray-500">İkinci en başarılı performans</p>
                 </div>
-                <div class="text-right">
-                  <p class="font-display text-2xl font-bold text-cafe-primary">
-                    98
-                  </p>
-                  <p class="text-xs text-gray-500">kahve</p>
-                </div>
+                <span class="text-2xl">🥈</span>
               </div>
 
-              <div class="h-px bg-gray-100 mx-4"></div>
-
-              <!-- Employee 3 - Bronze -->
-              <div class="flex items-center p-4">
-                <div
-                  class="w-8 h-8 rounded-full flex items-center justify-center mr-3 bg-[#CD7F32] shadow-sm"
-                >
-                  <span class="font-display text-sm font-bold text-cafe-primary"
-                    >3</span
-                  >
-                </div>
-                <div
-                  class="w-11 h-11 rounded-full bg-gradient-to-br from-cafe-secondary to-cafe-primary flex items-center justify-center mr-3 text-white font-semibold"
-                >
-                  EÖ
+              <div class="flex items-center gap-4 bg-white/70 rounded-xl p-4 shadow-sm">
+                <div class="w-10 h-10 bg-[#CD7F32] rounded-full flex items-center justify-center shadow">
+                  <span class="font-display font-bold text-cafe-primary">3</span>
                 </div>
                 <div class="flex-1">
-                  <p class="font-semibold text-cafe-primary">Elif Özdemir</p>
+                  <p class="font-semibold text-cafe-primary">Bronz Rozet</p>
+                  <p class="text-sm text-gray-500">Üçüncülük ödülü</p>
                 </div>
-                <div class="text-right">
-                  <p class="font-display text-2xl font-bold text-cafe-primary">
-                    84
-                  </p>
-                  <p class="text-xs text-gray-500">kahve</p>
-                </div>
+                <span class="text-2xl">🥉</span>
               </div>
+            </div>
 
-              <div class="h-px bg-gray-100 mx-4"></div>
-
-              <!-- Employee 4 -->
-              <div class="flex items-center p-4">
-                <div
-                  class="w-8 h-8 rounded-full flex items-center justify-center mr-3 bg-gray-200"
-                >
-                  <span class="font-display text-sm font-bold text-gray-600"
-                    >4</span
-                  >
-                </div>
-                <div
-                  class="w-11 h-11 rounded-full bg-gradient-to-br from-cafe-secondary to-cafe-primary flex items-center justify-center mr-3 text-white font-semibold"
-                >
-                  CD
-                </div>
-                <div class="flex-1">
-                  <p class="font-semibold text-cafe-primary">Can Demir</p>
-                </div>
-                <div class="text-right">
-                  <p class="font-display text-2xl font-bold text-cafe-primary">
-                    71
-                  </p>
-                  <p class="text-xs text-gray-500">kahve</p>
-                </div>
-              </div>
-
-              <div class="h-px bg-gray-100 mx-4"></div>
-
-              <!-- Employee 5 -->
-              <div class="flex items-center p-4">
-                <div
-                  class="w-8 h-8 rounded-full flex items-center justify-center mr-3 bg-gray-200"
-                >
-                  <span class="font-display text-sm font-bold text-gray-600"
-                    >5</span
-                  >
-                </div>
-                <div
-                  class="w-11 h-11 rounded-full bg-gradient-to-br from-cafe-secondary to-cafe-primary flex items-center justify-center mr-3 text-white font-semibold"
-                >
-                  ZA
-                </div>
-                <div class="flex-1">
-                  <p class="font-semibold text-cafe-primary">Zeynep Arslan</p>
-                </div>
-                <div class="text-right">
-                  <p class="font-display text-2xl font-bold text-cafe-primary">
-                    63
-                  </p>
-                  <p class="text-xs text-gray-500">kahve</p>
-                </div>
-              </div>
+            <div class="mt-8 p-4 bg-cafe-primary/5 rounded-xl border border-cafe-primary/10">
+              <p class="text-sm text-gray-600">
+                <span class="font-semibold text-cafe-primary">Pro İpucu:</span>
+                Haftalık en iyi performans gösteren çalışanınıza küçük bir ödül verin.
+                Motivasyon %2x artar!
+              </p>
             </div>
           </div>
         </div>
@@ -1403,6 +1379,90 @@
         <p class="text-center mt-12 text-cream-primary/50 text-sm italic">
           "Müşterileriniz uygulamayı sevecek. Siz de onları tanıyacaksınız."
         </p>
+
+        <!-- Customer App Screenshots -->
+        <div class="mt-20 pt-16 border-t border-cream-primary/20">
+          <div class="text-center mb-12">
+            <h3 class="text-2xl sm:text-3xl font-bold text-cream-primary mb-4">
+              Müşteri Uygulaması
+            </h3>
+            <p class="text-cream-primary/70 max-w-xl mx-auto">
+              Kullanıcı dostu tasarım, hızlı erişim. Müşterileriniz kafenizi keşfetsin,
+              kuponlarını takip etsin.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 lg:gap-16 max-w-5xl mx-auto">
+            <!-- Cafe Explore Screenshot -->
+            <div class="text-center">
+              <div class="relative inline-block mb-6">
+                <div class="absolute inset-0 bg-[#FFA500]/30 rounded-3xl blur-3xl scale-110"></div>
+                <img
+                  src="./assets/cafe-explore_small.png"
+                  srcset="./assets/cafe-explore_small.png 450w, ./assets/cafe-explore_large.png 675w"
+                  sizes="(max-width: 1024px) 450px, 675px"
+                  alt="Kafin Kafe Keşfet Ekranı"
+                  class="relative rounded-2xl w-[450px] lg:w-[337px] max-w-full"
+                />
+              </div>
+              <h4 class="text-lg font-bold text-cream-primary mb-2">Kafeleri Keşfet</h4>
+              <p class="text-cream-primary/70 text-sm">
+                Yakındaki Kafin kafelerini gör.<br />
+                Bir bakışta ilerleme durumunu kontrol et.
+              </p>
+            </div>
+
+            <!-- Coupons Screenshot -->
+            <div class="text-center">
+              <div class="relative inline-block mb-6">
+                <div class="absolute inset-0 bg-[#FFA500]/30 rounded-3xl blur-3xl scale-110"></div>
+                <img
+                  src="./assets/coupons_small.png"
+                  srcset="./assets/coupons_small.png 450w, ./assets/coupons_large.png 675w"
+                  sizes="(max-width: 1024px) 450px, 675px"
+                  alt="Kafin Kuponlarım Ekranı"
+                  class="relative rounded-2xl w-[450px] lg:w-[337px] max-w-full"
+                />
+              </div>
+              <h4 class="text-lg font-bold text-cream-primary mb-2">Kuponlarını Yönet</h4>
+              <p class="text-cream-primary/70 text-sm">
+                Kazanılan kuponlar tek yerde.<br />
+                Süre dolmadan kullan, yenisini kazan.
+              </p>
+            </div>
+          </div>
+
+          <!-- Customer Benefits -->
+          <div class="grid sm:grid-cols-3 gap-6 mt-16 max-w-3xl mx-auto">
+            <div class="text-center p-4">
+              <div class="w-12 h-12 bg-cream-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                <svg class="w-6 h-6 text-cream-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <p class="text-cream-primary font-semibold text-sm">Anında Takip</p>
+              <p class="text-cream-primary/60 text-xs mt-1">Her alışveriş anında güncellenir</p>
+            </div>
+            <div class="text-center p-4">
+              <div class="w-12 h-12 bg-cream-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                <svg class="w-6 h-6 text-cream-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                </svg>
+              </div>
+              <p class="text-cream-primary font-semibold text-sm">Akıllı Bildirimler</p>
+              <p class="text-cream-primary/60 text-xs mt-1">Kupon kazanınca haber verir</p>
+            </div>
+            <div class="text-center p-4">
+              <div class="w-12 h-12 bg-cream-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                <svg class="w-6 h-6 text-cream-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                </svg>
+              </div>
+              <p class="text-cream-primary font-semibold text-sm">Favori Kafeler</p>
+              <p class="text-cream-primary/60 text-xs mt-1">En sevdiğin kafelere hızlı eriş</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
