@@ -497,26 +497,29 @@
 
           <!-- Right: Hero Asset -->
           <div class="relative order-first lg:order-last z-20">
+            <!-- Video for Chrome/Firefox (hidden by default, shown via JS) -->
             <video
               id="heroVideo"
-              class="w-full aspect-[4/3] rounded-2xl object-cover pointer-events-none select-none"
+              class="w-full aspect-[4/3] rounded-2xl object-cover pointer-events-none select-none hidden"
               style="-webkit-touch-callout: none"
               autoplay
               muted
+              loop
               playsinline
               disablepictureinpicture
               controlslist="nodownload nofullscreen noremoteplayback"
               oncontextmenu="return false;"
-              poster="./assets/hero_endframe.png"
             >
-              <!-- Source set by JavaScript based on browser -->
-              <!-- Fallback image if video doesn't load -->
-              <img
-                src="./assets/hero_endframe.png"
-                alt="Kafin uygulaması"
-                class="w-full rounded-2xl"
-              />
+              <!-- Source set by JavaScript -->
             </video>
+
+            <!-- Static image for Safari (shown by default, hidden via JS for Chrome) -->
+            <img
+              id="heroImage"
+              src="./assets/hero_endframe.png"
+              alt="Kafin uygulaması"
+              class="w-full aspect-[4/3] rounded-2xl object-cover"
+            />
 
             <!-- Floating Card -->
             <div
@@ -2443,24 +2446,30 @@
     </footer>
 
     <script>
-      // Detect Safari and serve appropriate video format
+      // Detect Safari and show image, otherwise show video
+      // Safari can't handle transparent video backgrounds properly
       (function () {
         const video = document.getElementById("heroVideo");
+        const image = document.getElementById("heroImage");
         const isSafari = /^((?!chrome|android).)*safari/i.test(
           navigator.userAgent
         );
 
-        const source = document.createElement("source");
         if (isSafari) {
-          source.src = "./assets/hero_video.mp4";
-          source.type = "video/mp4";
+          // Safari: show static image, keep video hidden
+          video.classList.add("hidden");
+          image.classList.remove("hidden");
         } else {
+          // Chrome/Firefox: show video with WebM (supports transparency)
+          image.classList.add("hidden");
+          video.classList.remove("hidden");
+
+          const source = document.createElement("source");
           source.src = "./assets/hero_video.webm";
           source.type = "video/webm";
+          video.appendChild(source);
+          video.load();
         }
-
-        video.insertBefore(source, video.firstChild);
-        video.load();
       })();
     </script>
   </body>
