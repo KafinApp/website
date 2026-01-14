@@ -673,36 +673,15 @@
       <div class="max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <!-- Left: Screenshot -->
-          <div>
-            <!--
-                    ========================================
-                    ASSET #5: DASHBOARD SCREENSHOT
-                    ========================================
-                    Öneriler:
-                    - Kafe sahibi dashboard ekran görüntüsü
-                    - Grafikler, istatistikler, son aktiviteler görünmeli
-                    - Phone mockup içinde veya düz screenshot
-
-                    Boyut: 16:9, min 1200px genişlik
-                    Format: PNG/WebP
-                    ========================================
-                    -->
-            <div class="asset-placeholder aspect-video rounded-2xl">
-              <svg
-                class="w-16 h-16 mb-3 opacity-50"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h4v4H7V7zm6 0h4v2h-4V7zm0 4h4v2h-4v-2zm-6 2h4v4H7v-4z"
-                />
-              </svg>
-              <span class="font-bold text-lg">ASSET #5: Dashboard Ekranı</span>
-              <span class="mt-2 max-w-xs opacity-75"
-                >Grafikler, günlük satışlar, aktivite akışı gösteren
-                dashboard</span
-              >
-            </div>
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-cream-gold/20 to-cafe-secondary/20 rounded-2xl blur-3xl scale-105"></div>
+            <img
+              src="./assets/dashboard_small.png"
+              srcset="./assets/dashboard_small.png 1047w, ./assets/dashboard_large.png 1396w"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              alt="Kafin Kafe Sahibi Dashboard Ekranı"
+              class="relative w-full"
+            />
           </div>
 
           <!-- Right: Copy -->
@@ -2423,12 +2402,6 @@
 
             <!-- App badges -->
             <div class="mt-6 space-y-2">
-              <!--
-                        ASSET #11 & #12: App Store & Google Play Badges
-                        Resmi badge'leri kullanın:
-                        - https://developer.apple.com/app-store/marketing/guidelines/
-                        - https://play.google.com/intl/en_us/badges/
-                        -->
               <a href="#" class="block hover:opacity-80 transition">
                 <img
                   src="./assets/app_store.svg"
