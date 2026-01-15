@@ -614,12 +614,15 @@
             </video>
 
             <!-- Static image for Safari (shown by default, hidden via JS for Chrome) -->
-            <img
-              id="heroImage"
-              src="./assets/hero_endframe.png"
-              alt="Kafin uygulaması"
-              class="w-full aspect-[4/3] rounded-2xl object-cover"
-            />
+            <picture>
+              <source type="image/webp" srcset="./assets/hero_endframe.webp" />
+              <img
+                id="heroImage"
+                src="./assets/hero_endframe.png"
+                alt="Kafin uygulaması"
+                class="w-full aspect-[4/3] rounded-2xl object-cover"
+              />
+            </picture>
 
             <!-- Floating Card -->
             <div
@@ -654,11 +657,15 @@
       </div>
 
       <!-- Background decoration -->
-      <img
-        src="./assets/coffee_beans.png"
-        alt=""
-        class="absolute inset-0 w-full h-full object-cover opacity-5 pointer-events-none"
-      />
+      <picture>
+        <source type="image/webp" srcset="./assets/coffee_beans.webp" />
+        <img
+          src="./assets/coffee_beans.png"
+          alt=""
+          class="absolute inset-0 w-full h-full object-cover opacity-5 pointer-events-none"
+          loading="lazy"
+        />
+      </picture>
     </section>
 
     <!-- ====== SPEED SECTION ====== -->
@@ -753,7 +760,10 @@
               const video = document.getElementById('speed-demo-video');
               const isLarge = window.innerWidth >= 1024;
               const suffix = isLarge ? '' : '_small';
-              video.poster = 'assets/speed-demo-startframe' + suffix + '.png';
+              // Use WebP poster if supported, fallback to PNG
+              const webpSupport = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
+              const posterExt = webpSupport ? '.webp' : '.png';
+              video.poster = 'assets/speed-demo-startframe' + suffix + posterExt;
               video.querySelector('source').src = 'assets/speed-demo' + suffix + '.mp4';
               video.load();
             })();
@@ -769,13 +779,21 @@
           <!-- Left: Screenshot -->
           <div class="relative">
             <div class="absolute inset-0 bg-gradient-to-r from-cream-gold/20 to-cafe-secondary/20 rounded-2xl blur-3xl scale-105"></div>
-            <img
-              src="./assets/dashboard_small.png"
-              srcset="./assets/dashboard_small.png 1047w, ./assets/dashboard_large.png 1396w"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              alt="Kafin Kafe Sahibi Dashboard Ekranı"
-              class="relative w-full"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcset="./assets/dashboard_small.webp 1047w, ./assets/dashboard_large.webp 1396w"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <img
+                src="./assets/dashboard_small.png"
+                srcset="./assets/dashboard_small.png 1047w, ./assets/dashboard_large.png 1396w"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                alt="Kafin Kafe Sahibi Dashboard Ekranı"
+                class="relative w-full"
+                loading="lazy"
+              />
+            </picture>
           </div>
 
           <!-- Right: Copy -->
@@ -1273,13 +1291,21 @@
           <div class="order-1 lg:order-2 flex justify-center">
             <div class="relative">
               <div class="absolute inset-0 bg-gradient-to-r from-[#FFA500]/30 to-cafe-primary/30 rounded-3xl blur-3xl scale-110"></div>
-              <img
-                src="./assets/employees_small.png"
-                srcset="./assets/employees_small.png 450w, ./assets/employees_large.png 675w"
-                sizes="(max-width: 1024px) 450px, 675px"
-                alt="Kafin Çalışan Listesi Ekranı"
-                class="relative rounded-2xl w-[450px] lg:w-[337px] max-w-full"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="./assets/employees_small.webp 450w, ./assets/employees_large.webp 675w"
+                  sizes="(max-width: 1024px) 450px, 675px"
+                />
+                <img
+                  src="./assets/employees_small.png"
+                  srcset="./assets/employees_small.png 450w, ./assets/employees_large.png 675w"
+                  sizes="(max-width: 1024px) 450px, 675px"
+                  alt="Kafin Çalışan Listesi Ekranı"
+                  class="relative rounded-2xl w-[450px] lg:w-[337px] max-w-full"
+                  loading="lazy"
+                />
+              </picture>
             </div>
           </div>
         </div>
@@ -1290,13 +1316,21 @@
           <div class="flex justify-center">
             <div class="relative">
               <div class="absolute inset-0 bg-gradient-to-r from-cafe-primary/30 to-[#FFA500]/30 rounded-3xl blur-3xl scale-110"></div>
-              <img
-                src="./assets/employee-screen_small.png"
-                srcset="./assets/employee-screen_small.png 450w, ./assets/employee-screen_large.png 675w"
-                sizes="(max-width: 1024px) 450px, 675px"
-                alt="Kafin Çalışan Sıralaması Ekranı"
-                class="relative rounded-2xl w-[450px] lg:w-[337px] max-w-full"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="./assets/employee-screen_small.webp 450w, ./assets/employee-screen_large.webp 675w"
+                  sizes="(max-width: 1024px) 450px, 675px"
+                />
+                <img
+                  src="./assets/employee-screen_small.png"
+                  srcset="./assets/employee-screen_small.png 450w, ./assets/employee-screen_large.png 675w"
+                  sizes="(max-width: 1024px) 450px, 675px"
+                  alt="Kafin Çalışan Sıralaması Ekranı"
+                  class="relative rounded-2xl w-[450px] lg:w-[337px] max-w-full"
+                  loading="lazy"
+                />
+              </picture>
             </div>
           </div>
 
@@ -1372,7 +1406,7 @@
           </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-3 lg:gap-8 gap-24">
           <!-- Step 1 -->
           <div class="text-center">
             <div
@@ -1411,11 +1445,15 @@
             <div
               class="w-32 h-32 mx-auto mb-4 flex items-center justify-center"
             >
-              <img
-                src="./assets/coffee-icon.png"
-                alt="Kahveni Al"
-                class="max-w-full max-h-full object-contain"
-              />
+              <picture>
+                <source type="image/webp" srcset="./assets/coffee-icon.webp" />
+                <img
+                  src="./assets/coffee-icon.png"
+                  alt="Kahveni Al"
+                  class="max-w-full max-h-full object-contain"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <h3 class="text-lg font-bold text-cream-primary mb-2">
               Kahveni Al
@@ -1441,11 +1479,15 @@
             <div
               class="w-48 h-32 mx-auto mb-4 flex items-center justify-center"
             >
-              <img
-                src="./assets/coupon-icon.png"
-                alt="Bedava Kazan"
-                class="max-w-full max-h-full object-contain"
-              />
+              <picture>
+                <source type="image/webp" srcset="./assets/coupon-icon.webp" />
+                <img
+                  src="./assets/coupon-icon.png"
+                  alt="Bedava Kazan"
+                  class="max-w-full max-h-full object-contain"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <h3 class="text-lg font-bold text-cream-primary mb-2">
               Bedava Kazan
@@ -1478,13 +1520,21 @@
             <div class="text-center">
               <div class="relative inline-block mb-6">
                 <div class="absolute inset-0 bg-[#FFA500]/30 rounded-3xl blur-3xl scale-110"></div>
-                <img
-                  src="./assets/cafe-explore_small.png"
-                  srcset="./assets/cafe-explore_small.png 450w, ./assets/cafe-explore_large.png 675w"
-                  sizes="(max-width: 1024px) 450px, 675px"
-                  alt="Kafin Kafe Keşfet Ekranı"
-                  class="relative rounded-2xl w-[450px] lg:w-[337px] max-w-full"
-                />
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="./assets/cafe-explore_small.webp 450w, ./assets/cafe-explore_large.webp 675w"
+                    sizes="(max-width: 1024px) 450px, 675px"
+                  />
+                  <img
+                    src="./assets/cafe-explore_small.png"
+                    srcset="./assets/cafe-explore_small.png 450w, ./assets/cafe-explore_large.png 675w"
+                    sizes="(max-width: 1024px) 450px, 675px"
+                    alt="Kafin Kafe Keşfet Ekranı"
+                    class="relative rounded-2xl w-[450px] lg:w-[337px] max-w-full"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
               <h4 class="text-lg font-bold text-cream-primary mb-2">Kafeleri Keşfet</h4>
               <p class="text-cream-primary/70 text-sm">
@@ -1497,13 +1547,21 @@
             <div class="text-center">
               <div class="relative inline-block mb-6">
                 <div class="absolute inset-0 bg-[#FFA500]/30 rounded-3xl blur-3xl scale-110"></div>
-                <img
-                  src="./assets/coupons_small.png"
-                  srcset="./assets/coupons_small.png 450w, ./assets/coupons_large.png 675w"
-                  sizes="(max-width: 1024px) 450px, 675px"
-                  alt="Kafin Kuponlarım Ekranı"
-                  class="relative rounded-2xl w-[450px] lg:w-[337px] max-w-full"
-                />
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="./assets/coupons_small.webp 450w, ./assets/coupons_large.webp 675w"
+                    sizes="(max-width: 1024px) 450px, 675px"
+                  />
+                  <img
+                    src="./assets/coupons_small.png"
+                    srcset="./assets/coupons_small.png 450w, ./assets/coupons_large.png 675w"
+                    sizes="(max-width: 1024px) 450px, 675px"
+                    alt="Kafin Kuponlarım Ekranı"
+                    class="relative rounded-2xl w-[450px] lg:w-[337px] max-w-full"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
               <h4 class="text-lg font-bold text-cream-primary mb-2">Kuponlarını Yönet</h4>
               <p class="text-cream-primary/70 text-sm">
