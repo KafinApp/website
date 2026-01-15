@@ -736,18 +736,28 @@
           </div>
 
           <!-- Right: Demo Video/GIF -->
-          <div>
+          <div class="flex justify-center lg:justify-end">
             <video
-              class="rounded-2xl shadow-2xl w-full max-w-md mx-auto"
+              id="speed-demo-video"
+              class="rounded-2xl shadow-2xl w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
               autoplay
               loop
               muted
               playsinline
-              poster="assets/speed-demo-startframe.png"
             >
               <source src="assets/speed-demo.mp4" type="video/mp4" />
             </video>
           </div>
+          <script>
+            (function() {
+              const video = document.getElementById('speed-demo-video');
+              const isLarge = window.innerWidth >= 1024;
+              const suffix = isLarge ? '' : '_small';
+              video.poster = 'assets/speed-demo-startframe' + suffix + '.png';
+              video.querySelector('source').src = 'assets/speed-demo' + suffix + '.mp4';
+              video.load();
+            })();
+          </script>
         </div>
       </div>
     </section>
