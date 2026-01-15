@@ -737,35 +737,16 @@
 
           <!-- Right: Demo Video/GIF -->
           <div>
-            <!--
-                    ========================================
-                    ASSET #6: SPEED DEMO VIDEO/GIF
-                    ========================================
-                    Öneriler:
-                    - QR tarama sürecinin ne kadar hızlı olduğunu gösteren video
-                    - Müşteri QR gösteriyor → Çalışan taratıyor → Bitti!
-                    - Loop olarak çalışmalı
-                    - Gerçek ortamda çekilmiş veya screen recording
-
-                    Boyut: 16:9 veya 4:3
-                    Format: MP4 veya GIF (max 5MB)
-                    Süre: 5-10 saniye loop
-                    ========================================
-                    -->
-            <div class="asset-placeholder aspect-video rounded-2xl">
-              <svg
-                class="w-16 h-16 mb-3 opacity-50"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M8 5v14l11-7z" />
-              </svg>
-              <span class="font-bold text-lg">ASSET #6: Hız Demo Videosu</span>
-              <span class="mt-2 max-w-xs opacity-75"
-                >QR tarama işleminin ne kadar hızlı olduğunu gösteren kısa video
-                veya GIF</span
-              >
-            </div>
+            <video
+              class="rounded-2xl shadow-2xl w-full max-w-md mx-auto"
+              autoplay
+              loop
+              muted
+              playsinline
+              poster="assets/speed-demo-startframe.png"
+            >
+              <source src="assets/speed-demo.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </div>
