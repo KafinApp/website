@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="theme-color" content="#020c03" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/logo-192.png" />
+    <meta name="msapplication-navbutton-color" content="#020c03" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#020c03" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>Kampanya Sistemi - Kafin</title>
+    <meta name="description" content="Kafin kampanya sistemi hakkinda detayli bilgi. Esnek kampanya yonetimi, musteri seffafligi ve adil kurallar." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://kafin.app/kampanya-sistemi" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://kafin.app/kampanya-sistemi" />
+    <meta property="og:title" content="Kampanya Sistemi - Kafin" />
+    <meta property="og:description" content="Kafin kampanya sistemi hakkinda detayli bilgi. Esnek kampanya yonetimi, musteri seffafligi ve adil kurallar." />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:site_name" content="Kafin" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cafe: {
+                primary: "#0D3C0F",
+                secondary: "#9FB49F",
+                dark: "#062108",
+                darker: "#020C03",
+              },
+              cream: {
+                primary: "#F5F0DC",
+                gold: "#F9E6A1",
+                light: "#FFF1C0",
+              },
+              surface: "#FCFCFC",
+              lightBrown: "#888279"
+            },
+            fontFamily: {
+              display: ["Lora", "serif"],
+              body: ["Raleway", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        font-family: "Raleway", sans-serif;
+      }
+
+      h1, h2, h3, h4 {
+        font-family: "Lora", serif;
+      }
+
+      .gradient-dark {
+        background: linear-gradient(180deg, #020c03 0%, #0a370d 50%, #0d3c0f 100%);
+      }
+
+      .gradient-section {
+        background: linear-gradient(180deg, #0d3c0f 0%, #062108 100%);
+      }
+
+      .card-dark {
+        background: rgba(2, 12, 3, 0.6);
+        border: 1px solid rgba(159, 180, 159, 0.2);
+        backdrop-filter: blur(10px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #f5f0dc 0%, #f9e6a1 100%);
+        color: #0d3c0f;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(249, 230, 161, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 30px rgba(249, 230, 161, 0.5);
+      }
+
+      .doc-section {
+        scroll-margin-top: 100px;
+      }
+
+      .toc-link {
+        transition: all 0.2s ease;
+      }
+
+      .toc-link:hover {
+        padding-left: 8px;
+      }
+
+      .info-box {
+        background: rgba(249, 230, 161, 0.1);
+        border-left: 4px solid #f9e6a1;
+      }
+
+      .warning-box {
+        background: rgba(239, 68, 68, 0.1);
+        border-left: 4px solid #ef4444;
+      }
+
+      .example-box {
+        background: rgba(159, 180, 159, 0.1);
+        border: 1px solid rgba(159, 180, 159, 0.3);
+      }
+    </style>
+  </head>
+
+  <body class="bg-cafe-darker text-cream-primary antialiased">
+    <!-- ====== NAVIGATION ====== -->
+    <nav class="fixed top-0 w-full z-50 bg-cafe-darker/95 backdrop-blur-md border-b border-cafe-secondary/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="/" class="flex items-center gap-2">
+            <img src="./assets/logo_text.png" srcset="./assets/logo_text_2x.png 2x" alt="Kafin" class="h-8 brightness-150" />
+          </a>
+          <div class="flex items-center gap-4">
+            <a href="/" class="text-cream-primary/80 hover:text-cream-primary transition text-sm font-medium">Ana Sayfa</a>
+            <a href="/#baslat" class="btn-primary px-5 py-2.5 rounded-full text-sm">Hemen Basla</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ====== HERO ====== -->
+    <section class="gradient-dark pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-6">Kampanya Sistemi</h1>
+        <p class="text-xl text-cream-primary/70 max-w-2xl mx-auto">
+          Esnek, seffaf ve adil bir sadakat programi. Kafenizi ve musterilerinizi dusunurek tasarlandi.
+        </p>
+      </div>
+    </section>
+
+    <!-- ====== MAIN CONTENT ====== -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid lg:grid-cols-4 gap-12">
+
+        <!-- Table of Contents - Sidebar -->
+        <aside class="lg:col-span-1">
+          <div class="sticky top-24 card-dark rounded-2xl p-6">
+            <h3 class="font-bold text-lg mb-4">Icerik</h3>
+            <nav class="space-y-2 text-sm">
+              <a href="#genel-bakis" class="toc-link block text-cream-primary/70 hover:text-cream-gold">Genel Bakis</a>
+              <a href="#kurallar" class="toc-link block text-cream-primary/70 hover:text-cream-gold">Kampanya Kurallari</a>
+              <a href="#yasam-dongusu" class="toc-link block text-cream-primary/70 hover:text-cream-gold">Kampanya Yasam Dongusu</a>
+              <a href="#kampanya-sonlandirma" class="toc-link block text-cream-primary/70 hover:text-cream-gold">Kampanya Sonlandirma</a>
+              <a href="#musteri-ilerlemesi" class="toc-link block text-cream-primary/70 hover:text-cream-gold">Musteri Ilerlemesi</a>
+              <a href="#uyari-sistemi" class="toc-link block text-cream-primary/70 hover:text-cream-gold">Uyari Sistemi</a>
+              <a href="#limit" class="toc-link block text-cream-primary/70 hover:text-cream-gold">Yillik Limit</a>
+              <a href="#inaktif-durum" class="toc-link block text-cream-primary/70 hover:text-cream-gold">Inaktif Durum</a>
+              <a href="#sss" class="toc-link block text-cream-primary/70 hover:text-cream-gold">Sik Sorulan Sorular</a>
+            </nav>
+          </div>
+        </aside>
+
+        <!-- Content -->
+        <div class="lg:col-span-3 space-y-16">
+
+          <!-- Genel Bakis -->
+          <section id="genel-bakis" class="doc-section">
+            <h2 class="text-3xl font-bold mb-6">Genel Bakis</h2>
+            <p class="text-cream-primary/80 text-lg mb-6">
+              Kafin'de her kafe <strong>bir aktif kampanyaya</strong> sahip olabilir. Kampanyalar, musterilerinizin kac kahvede bir ucretsiz kahve kazanacagini belirler.
+            </p>
+
+            <div class="grid sm:grid-cols-3 gap-4 mb-8">
+              <div class="card-dark rounded-xl p-5 text-center">
+                <div class="text-3xl font-bold text-cream-gold mb-2">3-15</div>
+                <div class="text-sm text-cream-primary/60">Esik Araligi</div>
+              </div>
+              <div class="card-dark rounded-xl p-5 text-center">
+                <div class="text-3xl font-bold text-cream-gold mb-2">1 Ay</div>
+                <div class="text-sm text-cream-primary/60">Minimum Sure</div>
+              </div>
+              <div class="card-dark rounded-xl p-5 text-center">
+                <div class="text-3xl font-bold text-cream-gold mb-2">4</div>
+                <div class="text-sm text-cream-primary/60">Yillik Kampanya Limiti</div>
+              </div>
+            </div>
+
+            <div class="info-box rounded-xl p-5">
+              <h4 class="font-bold mb-2">Temel Prensipler</h4>
+              <ul class="space-y-2 text-cream-primary/80">
+                <li><strong>Esneklik:</strong> Kampanyanizi yil boyunca ihtiyaciniza gore degistirebilirsiniz</li>
+                <li><strong>Seffaflik:</strong> Musteriler degisikliklerden 1 hafta once haberdar edilir</li>
+                <li><strong>Adalet:</strong> Minimum sure ve yillik limit kurallari suistimali onler</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Kurallar -->
+          <section id="kurallar" class="doc-section">
+            <h2 class="text-3xl font-bold mb-6">Kampanya Kurallari</h2>
+
+            <div class="space-y-6">
+              <div class="card-dark rounded-xl p-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-cream-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span class="text-cream-gold font-bold">1</span>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-lg mb-2">Tek Aktif Kampanya</h3>
+                    <p class="text-cream-primary/70">Her kafenin ayni anda yalnizca <strong>bir aktif kampanyasi</strong> olabilir. Yeni bir kampanya baslatmak icin mevcut kampanyanin sonlandirilmasi gerekir.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-dark rounded-xl p-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-cream-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span class="text-cream-gold font-bold">2</span>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-lg mb-2">Minimum 1 Ay Sure</h3>
+                    <p class="text-cream-primary/70">Her kampanya en az <strong>1 ay</strong> boyunca aktif kalmalidir. Bu kural, musterilerin kampanyayi anlayip faydalanabilmesi icin yeterli zaman saglar.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-dark rounded-xl p-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-cream-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span class="text-cream-gold font-bold">3</span>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-lg mb-2">1 Hafta Bildirim Suresi</h3>
+                    <p class="text-cream-primary/70">Kampanya sonlandirildiginda, degisiklik <strong>1 hafta sonra</strong> gerceklesir. Bu sure boyunca musteriler uyarilarla bilgilendirilir.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-dark rounded-xl p-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-cream-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span class="text-cream-gold font-bold">4</span>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-lg mb-2">Yilda Maksimum 4 Kampanya</h3>
+                    <p class="text-cream-primary/70">Her takvim yilinda (Ocak-Aralik) en fazla <strong>4 kampanya</strong> olusturulabilir. Sayac her yil 1 Ocak'ta sifirlanir.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-dark rounded-xl p-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-cream-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span class="text-cream-gold font-bold">5</span>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-lg mb-2">Esik Araligi: 3-15</h3>
+                    <p class="text-cream-primary/70">Kampanya esigi <strong>3 ile 15</strong> arasinda olmalidir. Ornegin "8 kahve al, 1 bedava" seklinde bir kampanya olusturabilirsiniz.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Yasam Dongusu -->
+          <section id="yasam-dongusu" class="doc-section">
+            <h2 class="text-3xl font-bold mb-6">Kampanya Yasam Dongusu</h2>
+
+            <div class="example-box rounded-xl p-6 mb-6">
+              <h4 class="font-bold mb-4">Ornek Zaman Cizelgesi</h4>
+              <div class="space-y-3 text-sm">
+                <div class="flex items-center gap-4">
+                  <div class="w-32 text-cream-gold font-mono">1 Ocak</div>
+                  <div class="text-cream-primary/80">Kampanya baslar (10 kahvede 1 bedava)</div>
+                </div>
+                <div class="flex items-center gap-4">
+                  <div class="w-32 text-cream-primary/50 font-mono">1 Subat</div>
+                  <div class="text-cream-primary/50">En erken sonlandirma onay tarihi (1 ay doldu)</div>
+                </div>
+                <div class="flex items-center gap-4">
+                  <div class="w-32 text-cream-gold font-mono">15 Mart</div>
+                  <div class="text-cream-primary/80">Kafe sahibi kampanyayi sonlandirmayi onaylar</div>
+                </div>
+                <div class="flex items-center gap-4">
+                  <div class="w-32 text-cream-primary/50 font-mono">15-22 Mart</div>
+                  <div class="text-cream-primary/50">Uyari donemi - musteriler bilgilendirilir</div>
+                </div>
+                <div class="flex items-center gap-4">
+                  <div class="w-32 text-cream-gold font-mono">22 Mart</div>
+                  <div class="text-cream-primary/80">Yeni kampanya baslar (8 kahvede 1 bedava)</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="warning-box rounded-xl p-5">
+              <h4 class="font-bold mb-2 text-red-400">Onemli</h4>
+              <p class="text-cream-primary/80">Kampanya sonlandirma onaylandiktan sonra <strong>iptal edilemez</strong>. Lutfen karar vermeden once dikkatli dusunun.</p>
+            </div>
+          </section>
+
+          <!-- Kampanya Sonlandirma -->
+          <section id="kampanya-sonlandirma" class="doc-section">
+            <h2 class="text-3xl font-bold mb-6">Kampanya Sonlandirma</h2>
+            <p class="text-cream-primary/80 mb-6">Kampanyanizi sonlandirmak istediginizde iki secenek sunulur:</p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="card-dark rounded-xl p-6 border-2 border-transparent hover:border-cream-gold/30 transition">
+                <div class="text-cream-gold font-bold text-lg mb-3">Secenek A: Yeni Kampanya Istemiyorum</div>
+                <ul class="space-y-2 text-cream-primary/70 text-sm">
+                  <li>- Kampanya 1 hafta sonra sona erer</li>
+                  <li>- Kafe "inaktif" duruma gecer (gri gorunum)</li>
+                  <li>- Musteri ilerlemeleri dondurulur (silinmez)</li>
+                  <li>- Mevcut kuponlar gecerli kalir</li>
+                  <li>- Abonelik otomatik iptal <strong>edilmez</strong></li>
+                  <li>- Istediginiz zaman yeni kampanya baslatabiliriniz</li>
+                </ul>
+              </div>
+
+              <div class="card-dark rounded-xl p-6 border-2 border-cream-gold/50">
+                <div class="text-cream-gold font-bold text-lg mb-3">Secenek B: Yeni Kampanya Istiyorum</div>
+                <ul class="space-y-2 text-cream-primary/70 text-sm">
+                  <li>- Yeni esigi hemen secersiniz</li>
+                  <li>- 1 hafta boyunca uyarilar gosterilir</li>
+                  <li>- 1 hafta sonra yeni kampanya otomatik baslar</li>
+                  <li>- Musteri ilerlemeleri korunur</li>
+                  <li>- Yillik limite sayilir (ayni esik secilse bile)</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Musteri Ilerlemesi -->
+          <section id="musteri-ilerlemesi" class="doc-section">
+            <h2 class="text-3xl font-bold mb-6">Musteri Ilerlemesi</h2>
+
+            <div class="info-box rounded-xl p-5 mb-6">
+              <h4 class="font-bold mb-2">Ilerleme Korunur</h4>
+              <p class="text-cream-primary/80">Kampanya degistiginde musteri ilerlemesi <strong>oldugu gibi kalir</strong>. Ornegin, eski kampanyada 6 ilerlemeniz varsa, yeni kampanyada da 6 olarak devam eder.</p>
+            </div>
+
+            <h3 class="text-xl font-bold mb-4">Otomatik Kupon: Esik Dusurulurse</h3>
+            <p class="text-cream-primary/80 mb-4">Yeni esik, musterinin mevcut ilerlemesinden dusuk veya esit oldugunda, musteri <strong>otomatik olarak kupon kazanir</strong> ve kalan ilerleme yeni kampanyaya aktarilir.</p>
+
+            <div class="example-box rounded-xl p-6">
+              <h4 class="font-bold mb-4">Ornekler</h4>
+              <div class="space-y-4">
+                <div class="flex items-center justify-between p-3 bg-cafe-darker/50 rounded-lg">
+                  <div>
+                    <div class="text-sm text-cream-primary/60">Musteri ilerlemesi: 9</div>
+                    <div class="text-sm text-cream-primary/60">Eski esik: 10 &rarr; Yeni esik: 8</div>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-cream-gold font-bold">Kupon kazandi!</div>
+                    <div class="text-sm text-cream-primary/60">Yeni ilerleme: 1/8</div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-cafe-darker/50 rounded-lg">
+                  <div>
+                    <div class="text-sm text-cream-primary/60">Musteri ilerlemesi: 6</div>
+                    <div class="text-sm text-cream-primary/60">Eski esik: 10 &rarr; Yeni esik: 8</div>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-cream-primary/60">Kupon yok</div>
+                    <div class="text-sm text-cream-primary/60">Yeni ilerleme: 6/8</div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-cafe-darker/50 rounded-lg">
+                  <div>
+                    <div class="text-sm text-cream-primary/60">Musteri ilerlemesi: 5</div>
+                    <div class="text-sm text-cream-primary/60">Eski esik: 8 &rarr; Yeni esik: 10</div>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-cream-primary/60">Kupon yok</div>
+                    <div class="text-sm text-cream-primary/60">Yeni ilerleme: 5/10</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Uyari Sistemi -->
+          <section id="uyari-sistemi" class="doc-section">
+            <h2 class="text-3xl font-bold mb-6">Uyari Sistemi</h2>
+            <p class="text-cream-primary/80 mb-6">Kampanya degisikligi onaylandiginda, 1 haftalik bildirim suresi boyunca musterilere cesitli yerlerde uyarilar gosterilir:</p>
+
+            <div class="space-y-4">
+              <div class="card-dark rounded-xl p-5">
+                <h4 class="font-bold mb-2">Kafe Profil Sayfasi</h4>
+                <p class="text-cream-primary/70 text-sm">Sayfanin ustunde belirgin bir banner ile kampanya degisikligi duyurulur.</p>
+              </div>
+              <div class="card-dark rounded-xl p-5">
+                <h4 class="font-bold mb-2">Musteri Ilerleme Kartlari</h4>
+                <p class="text-cream-primary/70 text-sm">Ana ekran ve kafe detay sayfasindaki ilerleme kartlarinda uyari ikonu ve aciklama gosterilir.</p>
+              </div>
+              <div class="card-dark rounded-xl p-5">
+                <h4 class="font-bold mb-2">Bildirimler</h4>
+                <p class="text-cream-primary/70 text-sm">Ilerleme kaydeden musterilere push bildirimi gonderilir.</p>
+              </div>
+            </div>
+
+            <div class="example-box rounded-xl p-5 mt-6">
+              <h4 class="font-bold mb-2">Ornek Uyari Metni</h4>
+              <div class="bg-cafe-darker/50 rounded-lg p-4 text-sm">
+                <div class="text-cream-gold font-bold mb-1">Bu kafenin kampanyasi degisiyor</div>
+                <div class="text-cream-primary/70">Mevcut: 10 kahvede 1 bedava &rarr; Yeni: 8 kahvede 1 bedava</div>
+                <div class="text-cream-primary/50 text-xs mt-1">Degisiklik tarihi: 22 Mart 2025</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Limit -->
+          <section id="limit" class="doc-section">
+            <h2 class="text-3xl font-bold mb-6">Yillik Limit (4/4)</h2>
+            <p class="text-cream-primary/80 mb-6">Yillik 4 kampanya limitine ulastiginizda secenekleriniz:</p>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-cafe-secondary/20">
+                    <th class="text-left py-3 text-cream-primary/60">Islem</th>
+                    <th class="text-center py-3 text-cream-primary/60">Musait mi?</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-cafe-secondary/10">
+                  <tr>
+                    <td class="py-3">Mevcut kampanyayi surdurme</td>
+                    <td class="py-3 text-center text-green-400">Evet</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3">Kampanyayi sonlandirip inaktif olma (Secenek A)</td>
+                    <td class="py-3 text-center text-green-400">Evet</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3">Ayni esikle yeni kampanya (Secenek B)</td>
+                    <td class="py-3 text-center text-green-400">Evet</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3">Farkli esikle yeni kampanya (Secenek B)</td>
+                    <td class="py-3 text-center text-red-400">Hayir</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="info-box rounded-xl p-5 mt-6">
+              <p class="text-cream-primary/80">Limit yalnizca <strong>esik degisikligi</strong> icin gecerlidir. Ayni esikle devam etmek her zaman mumkundur.</p>
+            </div>
+          </section>
+
+          <!-- Inaktif Durum -->
+          <section id="inaktif-durum" class="doc-section">
+            <h2 class="text-3xl font-bold mb-6">Inaktif (Kampanyasiz) Durum</h2>
+            <p class="text-cream-primary/80 mb-6">Secenek A ile kampanyanizi sonlandirdiginizda kafeniz "inaktif" duruma gecer:</p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="card-dark rounded-xl p-6">
+                <h4 class="font-bold text-cream-gold mb-3">Kafe Icin</h4>
+                <ul class="space-y-2 text-cream-primary/70 text-sm">
+                  <li>- Arama sonuclarinda gri gorunur</li>
+                  <li>- "Kampanya yok" etiketi gosterilir</li>
+                  <li>- Kafe profili erisime acik kalir</li>
+                  <li>- Abonelik aktifse: istatistikler, calisan yonetimi erisime acik</li>
+                  <li>- Abonelik yoksa: yalnizca profil duzenleme ve abonelik baslat</li>
+                </ul>
+              </div>
+
+              <div class="card-dark rounded-xl p-6">
+                <h4 class="font-bold text-cream-gold mb-3">Musteriler Icin</h4>
+                <ul class="space-y-2 text-cream-primary/70 text-sm">
+                  <li>- Mevcut ilerleme <strong>dondurulur</strong> (silinmez)</li>
+                  <li>- Yeni ilerleme kazanilamaz</li>
+                  <li>- Mevcut kuponlar <strong>gecerli kalir</strong> ve kullanilabilir</li>
+                  <li>- Kafe tekrar kampanya baslatinca ilerleme devam eder</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- SSS -->
+          <section id="sss" class="doc-section">
+            <h2 class="text-3xl font-bold mb-6">Sik Sorulan Sorular</h2>
+
+            <div class="space-y-4" x-data="{ openFaq: null }">
+              <div class="card-dark rounded-xl overflow-hidden">
+                <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full px-6 py-4 text-left flex justify-between items-center">
+                  <span class="font-semibold">Yeni acilan kafeler icin limit nasil isliyor?</span>
+                  <svg class="w-5 h-5 text-cream-primary/50 transition-transform" :class="openFaq === 1 && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="openFaq === 1" x-collapse class="px-6 pb-4">
+                  <p class="text-cream-primary/70">Kafeyi olustururken belirlediginiz ilk kampanya, 4 kampanyalik limite dahildir. Ornegin Kasim ayinda acilan bir kafe, Aralik sonuna kadar 4 kampanya hakki kullanabilir. 1 Ocak'ta sayac sifirlanir.</p>
+                </div>
+              </div>
+
+              <div class="card-dark rounded-xl overflow-hidden">
+                <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full px-6 py-4 text-left flex justify-between items-center">
+                  <span class="font-semibold">Inaktif kafeden tekrar kampanya baslatirsam limite sayilir mi?</span>
+                  <svg class="w-5 h-5 text-cream-primary/50 transition-transform" :class="openFaq === 2 && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="openFaq === 2" x-collapse class="px-6 pb-4">
+                  <p class="text-cream-primary/70">Evet, inaktif durumdan yeni kampanya baslatmak yillik limite dahildir. Ancak ayni esikle devam etmek limite dahil degildir.</p>
+                </div>
+              </div>
+
+              <div class="card-dark rounded-xl overflow-hidden">
+                <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full px-6 py-4 text-left flex justify-between items-center">
+                  <span class="font-semibold">Kampanya degisikligi onayini iptal edebilir miyim?</span>
+                  <svg class="w-5 h-5 text-cream-primary/50 transition-transform" :class="openFaq === 3 && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="openFaq === 3" x-collapse class="px-6 pb-4">
+                  <p class="text-cream-primary/70">Hayir, kampanya sonlandirma onaylandiktan sonra iptal edilemez. Bu kural, musterilerin gosterdikleri uyarilara guvenebilmesi icin gereklidir.</p>
+                </div>
+              </div>
+
+              <div class="card-dark rounded-xl overflow-hidden">
+                <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full px-6 py-4 text-left flex justify-between items-center">
+                  <span class="font-semibold">Kuponlar kampanya degisikliginden etkilenir mi?</span>
+                  <svg class="w-5 h-5 text-cream-primary/50 transition-transform" :class="openFaq === 4 && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="openFaq === 4" x-collapse class="px-6 pb-4">
+                  <p class="text-cream-primary/70">Hayir, kuponlar kampanyalardan bagimsizdir. Her kuponun kendi 30 gunluk gecerlilik suresi vardir ve kampanya degisiklikleri bunu etkilemez.</p>
+                </div>
+              </div>
+
+              <div class="card-dark rounded-xl overflow-hidden">
+                <button @click="openFaq = openFaq === 5 ? null : 5" class="w-full px-6 py-4 text-left flex justify-between items-center">
+                  <span class="font-semibold">Yilbasinda ne olur?</span>
+                  <svg class="w-5 h-5 text-cream-primary/50 transition-transform" :class="openFaq === 5 && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="openFaq === 5" x-collapse class="px-6 pb-4">
+                  <p class="text-cream-primary/70">1 Ocak'ta yalnizca yillik kampanya sayaci sifirlanir. Musterilerin kahve ilerlemeleri, kuponlari ve aktif kampanyalar <strong>aynen devam eder</strong>. Hicbir veri silinmez.</p>
+                </div>
+              </div>
+
+              <div class="card-dark rounded-xl overflow-hidden">
+                <button @click="openFaq = openFaq === 6 ? null : 6" class="w-full px-6 py-4 text-left flex justify-between items-center">
+                  <span class="font-semibold">Secenek A'yi secersem aboneligim iptal olur mu?</span>
+                  <svg class="w-5 h-5 text-cream-primary/50 transition-transform" :class="openFaq === 6 && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="openFaq === 6" x-collapse class="px-6 pb-4">
+                  <p class="text-cream-primary/70">Hayir, kampanyayi sonlandirmak aboneligi otomatik iptal etmez. Aboneliginiz aktif kaldigi surece istatistikleri gorebilir ve calisanlari yonetebilirsiniz. Aboneligi ayri olarak iptal etmeniz gerekir.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- CTA -->
+          <section class="text-center py-12">
+            <h2 class="text-2xl font-bold mb-4">Sorulariniz mi var?</h2>
+            <p class="text-cream-primary/70 mb-6">Kampanya sistemi hakkinda daha fazla bilgi almak icin bize ulasin.</p>
+            <a href="mailto:info@kafin.app" class="btn-primary px-8 py-3 rounded-full inline-block">Bize Yazin</a>
+          </section>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="bg-cafe-darker py-12 px-4 sm:px-6 lg:px-8 border-t border-cafe-secondary/10">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          <a href="/" class="flex items-center gap-2">
+            <img src="./assets/logo_text.png" srcset="./assets/logo_text_2x.png 2x" alt="Kafin" class="h-8 brightness-150" />
+          </a>
+          <p class="font-display text-cream-primary/40 text-sm">
+            &copy; 2026 Kafin. Tum haklari saklidir.
+          </p>
+          <div class="flex gap-6 text-sm">
+            <a href="/" class="text-cream-primary/40 hover:text-cream-primary/60 transition">Ana Sayfa</a>
+            <a href="#" class="text-cream-primary/40 hover:text-cream-primary/60 transition">Gizlilik Politikasi</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
